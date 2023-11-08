@@ -45,14 +45,17 @@ namespace KeyboardWarrior
             Gizmos.DrawWireCube(transform.position - transform.up * rayDistance, boxSize);
         }
         #endregion
+        #region Handle Movement
         public void HandleMove(Vector2 movementValue)
         {
-            
+            rb.AddForce(new Vector2(movementValue.x, movementValue.y) * moveSpeed, ForceMode2D.Force);
+            //rb.MovePosition(rb.position + movementValue * Time.deltaTime);
         }
 
         public void HandleJump()
         {
             rb.velocity = GroundCheck() ? new Vector2(0, jumpVelocity) : rb.velocity;
         }
+        #endregion
     }
 }
