@@ -9,6 +9,8 @@ namespace KeyboardWarrior
         private PlayerInput playerInput;
         private PlayerInputActions inputActions;
 
+        public Vector2 movementInput;
+
         private void OnEnable()
         {
         }
@@ -40,6 +42,7 @@ namespace KeyboardWarrior
 
         public void MoveInput(Vector2 value)
         {
+            movementInput = value;
             playerMovement.HandleMove(value);
         }
 

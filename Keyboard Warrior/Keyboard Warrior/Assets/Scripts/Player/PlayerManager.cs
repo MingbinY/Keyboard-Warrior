@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace KeyboardWarrior
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager : Singleton<PlayerManager>
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public InputManager inputManager;
+        public PlayerAnimationManager playerAnimationManager;
+        public PlayerMovement playerMovement;
 
-        // Update is called once per frame
-        void Update()
+        protected override void Awake()
         {
-        
+            base.Awake();
+            inputManager = GetComponent<InputManager>();
+            playerAnimationManager = GetComponent<PlayerAnimationManager>();
+            playerMovement = GetComponent<PlayerMovement>();
         }
     }
 }

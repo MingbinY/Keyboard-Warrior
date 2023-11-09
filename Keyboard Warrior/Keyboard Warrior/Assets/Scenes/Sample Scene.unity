@@ -287,8 +287,10 @@ GameObject:
   - component: {fileID: 259570809}
   - component: {fileID: 259570808}
   - component: {fileID: 259570812}
+  - component: {fileID: 259570815}
   - component: {fileID: 259570813}
   - component: {fileID: 259570810}
+  - component: {fileID: 259570814}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -455,6 +457,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8dc4291102b7b44b80948a56eacdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementInput: {x: 0, y: 0}
+--- !u!114 &259570814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259570806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65844459e2a61f4ea367c824959052b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSprite: {fileID: 39795927}
+--- !u!114 &259570815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259570806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6b451df8c0bc549b1fbc1027591095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
+  playerAnimationManager: {fileID: 0}
+  playerMovement: {fileID: 0}
 --- !u!1 &300954513
 GameObject:
   m_ObjectHideFlags: 3
