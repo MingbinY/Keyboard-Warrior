@@ -218,7 +218,7 @@ Animator:
   m_GameObject: {fileID: 39795927}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c7f318feeecc7f4891c7f669d3c2aa2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -388,12 +388,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f04feb13953194b9b4efb14ca8bc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxSize: {x: 0.5, y: 0.1}
+  isGrounded: 0
+  boxSize: {x: 0.2, y: 0.1}
   rayDistance: 0.46
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  jumpVelocity: 6
+  jumpVelocity: 10
   moveSpeed: 2
 --- !u!114 &259570812
 MonoBehaviour:
@@ -639,7 +640,7 @@ Transform:
   m_GameObject: {fileID: 493263550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000023841858, y: -0.5999998, z: -10}
+  m_LocalPosition: {x: 0.00000047683716, y: -0.5999998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7312,7 +7313,7 @@ Transform:
   m_GameObject: {fileID: 1522616577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000023841858, y: -0.5999998, z: -10}
+  m_LocalPosition: {x: 0.00000047683716, y: -0.5999998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -6,7 +6,7 @@ namespace KeyboardWarrior
 {
     public class PlayerMovement : MonoBehaviour
     {
-        bool isGrounded = false;
+        public bool isGrounded = false;
         Rigidbody2D rb;
 
         [Header("Ground Check")]
@@ -28,6 +28,11 @@ namespace KeyboardWarrior
         private void Update()
         {
             isGrounded = GroundCheck();
+            //if (!isGrounded)
+            //{
+            //    //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y - rb.gravityScale);
+            //    rb.AddForce(-rb.transform.up * rb.gravityScale * Time.deltaTime);
+            //}
         }
 
         #region Ground Check
@@ -48,7 +53,7 @@ namespace KeyboardWarrior
         #region Handle Movement
         public void HandleMove(Vector2 movementValue)
         {
-            rb.AddForce(new Vector2(movementValue.x, movementValue.y) * moveSpeed, ForceMode2D.Force);
+            rb.velocity = new Vector2(movementValue.x * moveSpeed, movementValue.y + rb.velocity.y);
             //rb.MovePosition(rb.position + movementValue * Time.deltaTime);
         }
 
