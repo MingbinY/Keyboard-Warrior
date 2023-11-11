@@ -8,6 +8,7 @@ namespace KeyboardWarrior
     public class Dragable : MonoBehaviour
     {
         public Color hoverColor;
+        public string equipmentName;
         Color defaultColor = Color.white;
         Vector3 startPos;
         Image image;
@@ -48,6 +49,7 @@ namespace KeyboardWarrior
             if (Mathf.Abs(currentPos.x - playerObj.transform.position.x) < 0.5f && Mathf.Abs(currentPos.y - playerObj.transform.position.y) < 0.5f)
             {
                 Debug.Log("Equip Skill");
+                PlayerManager.Instance.playerEquipmentManager.Equip(gameObject, equipmentName);
             }
             else
             {
