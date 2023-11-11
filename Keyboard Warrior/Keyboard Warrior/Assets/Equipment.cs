@@ -15,6 +15,7 @@ namespace KeyboardWarrior
             
             if (Input.GetMouseButtonDown(0))
             {
+                PlayerManager.Instance.playerKeyboardManager.UnuseKey(name);
                 PlayerManager.Instance.playerEquipmentManager.UnEquip(gameObject);
             }
         }

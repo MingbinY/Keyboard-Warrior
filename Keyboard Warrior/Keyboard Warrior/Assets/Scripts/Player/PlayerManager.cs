@@ -10,6 +10,7 @@ namespace KeyboardWarrior
         public PlayerAnimationManager playerAnimationManager;
         public PlayerMovement playerMovement;
         public PlayerEquipmentManager playerEquipmentManager;
+        public PlayerKeyboardManager playerKeyboardManager;
 
         protected override void Awake()
         {
@@ -18,6 +19,7 @@ namespace KeyboardWarrior
             playerAnimationManager = GetComponent<PlayerAnimationManager>();
             playerMovement = GetComponent<PlayerMovement>();
             playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
+            playerKeyboardManager = GetComponent<PlayerKeyboardManager>();
         }
     }
 }

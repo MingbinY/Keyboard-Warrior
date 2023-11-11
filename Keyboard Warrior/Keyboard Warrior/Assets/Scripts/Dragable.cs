@@ -61,6 +61,7 @@ namespace KeyboardWarrior
                 }
             }
             OnEndHover();
+            PlayerManager.Instance.playerKeyboardManager.UseKey(name);
             transform.position = startPos;
             gameObject.SetActive(false);
         }

@@ -22,6 +22,7 @@ namespace KeyboardWarrior
                 {
                     relatedKeyUI.SetActive(true);
                     gameObject.SetActive(false);
+                    PlayerManager.Instance.playerKeyboardManager.UnuseKey(name);
                 }
             }
         }

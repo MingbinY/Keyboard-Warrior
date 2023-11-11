@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 259570810}
   - component: {fileID: 259570814}
   - component: {fileID: 259570816}
+  - component: {fileID: 259570817}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -804,6 +805,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8dc4291102b7b44b80948a56eacdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canUseW: 1
+  canUseA: 1
+  canUseS: 1
+  canUseD: 1
+  canUseSpace: 1
   movementInput: {x: 0, y: 0}
 --- !u!114 &259570814
 MonoBehaviour:
@@ -834,6 +840,7 @@ MonoBehaviour:
   playerAnimationManager: {fileID: 0}
   playerMovement: {fileID: 0}
   playerEquipmentManager: {fileID: 0}
+  playerKeyboardManager: {fileID: 0}
 --- !u!114 &259570816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +854,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipments: []
+--- !u!114 &259570817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259570806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ffc45f16a442b449fffeb6d3b0a2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &273475935
 GameObject:
   m_ObjectHideFlags: 0

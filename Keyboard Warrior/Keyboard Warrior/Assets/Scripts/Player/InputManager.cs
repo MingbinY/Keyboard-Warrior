@@ -8,6 +8,11 @@ namespace KeyboardWarrior
         PlayerMovement playerMovement;
         private PlayerInput playerInput;
         private PlayerInputActions inputActions;
+        public bool canUseW = true;
+        public bool canUseA = true;
+        public bool canUseS = true;
+        public bool canUseD = true;
+        public bool canUseSpace = true;
 
         public Vector2 movementInput;
 
@@ -36,12 +41,16 @@ namespace KeyboardWarrior
 
         public void JumpInput(InputAction.CallbackContext context)
         {
+            if (!canUseSpace)
+                return;
             if (context.performed)
                 playerMovement.HandleJump();
         }
 
         public void MoveInput(Vector2 value)
         {
+            if (!canUseA && value.x == -1) return;
+            if (!canUseD && value.x == 1) return;
             movementInput = value;
             playerMovement.HandleMove(value);
         }
