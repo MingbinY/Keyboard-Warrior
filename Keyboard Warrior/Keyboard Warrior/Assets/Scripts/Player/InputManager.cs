@@ -48,6 +48,7 @@ namespace KeyboardWarrior
         {
             if (!keyboardManager.canUseSpace) return;
             if (context.performed)
+                keyboardManager.pressedSpace = true;
                 playerMovement.HandleJump();
         }
 

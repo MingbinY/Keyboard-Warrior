@@ -40,6 +40,9 @@ namespace KeyboardWarrior
                 case "D":
                     canUseD = false;
                     break;
+                case "Space":
+                    canUseSpace = false;
+                    break;
             }
         }
 
@@ -58,6 +61,9 @@ namespace KeyboardWarrior
                     break;
                 case "D":
                     canUseD = true;
+                    break;
+                case "Space":
+                    canUseSpace = true;
                     break;
             }
         }

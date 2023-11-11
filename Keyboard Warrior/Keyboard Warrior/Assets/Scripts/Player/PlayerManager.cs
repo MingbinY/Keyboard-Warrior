@@ -31,5 +31,17 @@ namespace KeyboardWarrior
             playerKeyboardManager = GetComponent<PlayerKeyboardManager>();
             ladderMovement = GetComponent<PlayerLadderMovement>();
         }
+
+        private void Start()
+        {
+            if (GameManager.Instance.respawnPoint != null)
+            {
+                Instance.gameObject.transform.position = GameManager.Instance.respawnPoint;
+            }
+            else
+            {
+                GameManager.Instance.SetSpawnPoint(Instance.transform);
+            }
+        }
     }
 }
