@@ -4,6 +4,14 @@ using UnityEngine;
 
 namespace KeyboardWarrior
 {
+    #region require components
+    [RequireComponent(typeof(InputManager))]
+    [RequireComponent(typeof(PlayerAnimationManager))]
+    [RequireComponent(typeof(PlayerMovement))]
+    [RequireComponent(typeof(PlayerEquipmentManager))]
+    [RequireComponent(typeof(PlayerKeyboardManager))]
+    [RequireComponent(typeof(PlayerLadderMovement))]
+    #endregion
     public class PlayerManager : Singleton<PlayerManager>
     {
         public InputManager inputManager;
@@ -11,6 +19,7 @@ namespace KeyboardWarrior
         public PlayerMovement playerMovement;
         public PlayerEquipmentManager playerEquipmentManager;
         public PlayerKeyboardManager playerKeyboardManager;
+        public PlayerLadderMovement ladderMovement;
 
         protected override void Awake()
         {
@@ -20,6 +29,7 @@ namespace KeyboardWarrior
             playerMovement = GetComponent<PlayerMovement>();
             playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
             playerKeyboardManager = GetComponent<PlayerKeyboardManager>();
+            ladderMovement = GetComponent<PlayerLadderMovement>();
         }
     }
 }

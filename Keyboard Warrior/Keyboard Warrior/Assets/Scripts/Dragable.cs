@@ -8,6 +8,7 @@ namespace KeyboardWarrior
     public class Dragable : MonoBehaviour
     {
         public Color hoverColor;
+        public Color pressColor;
         public string equipmentName;
         Color defaultColor = Color.white;
         Vector3 startPos;
@@ -26,6 +27,14 @@ namespace KeyboardWarrior
         private void Update()
         {
             //Debug.Log(transform.position + "," + Camera.main.ScreenToWorldPoint(transform.position));
+            if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), equipmentName)))
+            {
+                image.color = pressColor;
+            }
+            if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), equipmentName)))
+            {
+                image.color = defaultColor;
+            }
         }
 
         public void OnHover()

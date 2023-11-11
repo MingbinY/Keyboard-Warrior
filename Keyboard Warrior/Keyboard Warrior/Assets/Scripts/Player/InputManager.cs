@@ -8,13 +8,12 @@ namespace KeyboardWarrior
         PlayerMovement playerMovement;
         private PlayerInput playerInput;
         private PlayerInputActions inputActions;
-        public bool canUseW = true;
-        public bool canUseA = true;
-        public bool canUseS = true;
-        public bool canUseD = true;
-        public bool canUseSpace = true;
+        private PlayerKeyboardManager keyboardManager;
+        private PlayerLadderMovement ladderMovement;
 
         public Vector2 movementInput;
+        public Vector2 climbInput;
+        public bool jumpInput;
 
         private void OnEnable()
         {
@@ -26,35 +25,49 @@ namespace KeyboardWarrior
 
         private void Awake()
         {
-            playerMovement = GetComponent<PlayerMovement>();
             playerInput = GetComponent<PlayerInput>();
-
             inputActions = new PlayerInputActions();
             inputActions.Player.Enable();
             inputActions.Player.Jump.performed += JumpInput;
         }
 
+        private void Start()
+        {
+            playerMovement = PlayerManager.Instance.playerMovement;
+            keyboardManager = PlayerManager.Instance.playerKeyboardManager;
+            ladderMovement = PlayerManager.Instance.ladderMovement;
+        }
+
         private void Update()
         {
             MoveInput(inputActions.Player.Move.ReadValue<Vector2>());
+            ClimbInput(inputActions.Player.Climb.ReadValue<Vector2>());
         }
 
         public void JumpInput(InputAction.CallbackContext context)
         {
-            if (!canUseSpace)
-                return;
+            if (!keyboardManager.canUseSpace) return;
             if (context.performed)
                 playerMovement.HandleJump();
         }
 
         public void MoveInput(Vector2 value)
         {
-            if (!canUseA && value.x == -1) return;
-            if (!canUseD && value.x == 1) return;
+            if (!keyboardManager.canUseA && value.x == -1) return;
+            if (!keyboardManager.canUseD && value.x == 1) return;
+
+            keyboardManager.pressedA = value.x == -1 ?  true : false;
+            keyboardManager.pressedD = value.x == 1 ?  true : false;
+
             movementInput = value;
             playerMovement.HandleMove(value);
         }
 
-
+        public void ClimbInput(Vector2 value)
+        {
+            if (!keyboardManager.canUseW) return;
+            climbInput = value;
+            ladderMovement.StartClimbing(value.y);
+        }
     }
 }

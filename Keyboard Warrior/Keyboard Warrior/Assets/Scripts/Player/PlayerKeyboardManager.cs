@@ -7,6 +7,17 @@ namespace KeyboardWarrior
     public class PlayerKeyboardManager : MonoBehaviour
     {
         InputManager inputManager;
+        public bool canUseW = true;
+        public bool canUseA = true;
+        public bool canUseS = true;
+        public bool canUseD = true;
+        public bool canUseSpace = true;
+
+        public bool pressedW = false;
+        public bool pressedA = false;
+        public bool pressedS = false;
+        public bool pressedD = false;
+        public bool pressedSpace = false;
 
         private void Start()
         {
@@ -18,16 +29,16 @@ namespace KeyboardWarrior
             switch (name)
             {
                 case "W":
-                    inputManager.canUseW = false;
+                    canUseW = false;
                     break;
                 case "A":
-                    inputManager.canUseA = false;
+                    canUseA = false;
                     break;
                 case "S":
-                    inputManager.canUseS = false;
+                    canUseS = false;
                     break;
                 case "D":
-                    inputManager.canUseD = false;
+                    canUseD = false;
                     break;
             }
         }
@@ -37,16 +48,16 @@ namespace KeyboardWarrior
             switch (name)
             {
                 case "W":
-                    inputManager.canUseW = true;
+                    canUseW = true;
                     break;
                 case "A":
-                    inputManager.canUseA = true;
+                    canUseA = true;
                     break;
                 case "S":
-                    inputManager.canUseS = true;
+                    canUseS = true;
                     break;
                 case "D":
-                    inputManager.canUseD = true;
+                    canUseD = true;
                     break;
             }
         }

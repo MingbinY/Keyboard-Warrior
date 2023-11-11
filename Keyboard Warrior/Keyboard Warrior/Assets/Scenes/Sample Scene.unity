@@ -194,8 +194,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1178862655
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -637,6 +637,7 @@ GameObject:
   - component: {fileID: 259570814}
   - component: {fileID: 259570816}
   - component: {fileID: 259570817}
+  - component: {fileID: 259570818}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -788,6 +789,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4b5532a5-4f76-4a0f-9114-85594bd577f1
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3ec92584-35f0-471c-ae7d-4d41e54b1c78
+    m_ActionName: Player/Climb[/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -805,12 +810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8dc4291102b7b44b80948a56eacdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canUseW: 1
-  canUseA: 1
-  canUseS: 1
-  canUseD: 1
-  canUseSpace: 1
   movementInput: {x: 0, y: 0}
+  climbInput: {x: 0, y: 0}
+  jumpInput: 0
 --- !u!114 &259570814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,6 +843,7 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerEquipmentManager: {fileID: 0}
   playerKeyboardManager: {fileID: 0}
+  ladderMovement: {fileID: 0}
 --- !u!114 &259570816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,6 +869,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ffc45f16a442b449fffeb6d3b0a2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canUseW: 1
+  canUseA: 1
+  canUseS: 1
+  canUseD: 1
+  canUseSpace: 1
+  pressedW: 0
+  pressedA: 0
+  pressedS: 0
+  pressedD: 0
+  pressedSpace: 0
+--- !u!114 &259570818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259570806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d484452ebd0e545a46388f50241943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLadder: 0
 --- !u!1 &273475935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1326,177 @@ Transform:
   - {fileID: 300954514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &579725031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 579725035}
+  - component: {fileID: 579725034}
+  - component: {fileID: 579725033}
+  - component: {fileID: 579725032}
+  - component: {fileID: 579725036}
+  m_Layer: 0
+  m_Name: Ladder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &579725032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579725031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1303ffcb550e6a4fb2275159e79531e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &579725033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579725031}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &579725034
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579725031}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1789582033
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &579725035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579725031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &579725036
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579725031}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &584530644
 GameObject:
   m_ObjectHideFlags: 0
@@ -60348,6 +60545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0.8437652, b: 0, a: 1}
+  pressColor: {r: 0, g: 1, b: 0.2116425, a: 1}
   equipmentName: W
   obstaclePrefab: {fileID: 1681078161}
 --- !u!114 &727153343
@@ -61076,6 +61274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0.8437652, b: 0, a: 1}
+  pressColor: {r: 0, g: 1, b: 0.2116425, a: 1}
   equipmentName: D
   obstaclePrefab: {fileID: 256388529}
 --- !u!1 &1183172055
@@ -61540,6 +61739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0.8437652, b: 0, a: 1}
+  pressColor: {r: 0, g: 1, b: 0.2116425, a: 1}
   equipmentName: S
   obstaclePrefab: {fileID: 249481047}
 --- !u!1 &1408533812
@@ -61789,6 +61989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0.8437652, b: 0, a: 1}
+  pressColor: {r: 0, g: 1, b: 0.2116425, a: 1}
   equipmentName: A
   obstaclePrefab: {fileID: 1916612602}
 --- !u!1 &1441545439
@@ -63858,6 +64059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0.8437652, b: 0, a: 1}
+  pressColor: {r: 0, g: 1, b: 0.21176471, a: 1}
   equipmentName: Space
   obstaclePrefab: {fileID: 273475935}
 --- !u!1 &1916612602
@@ -64043,3 +64245,4 @@ SceneRoots:
   - {fileID: 815471232}
   - {fileID: 807929684}
   - {fileID: 1277919404}
+  - {fileID: 579725035}
