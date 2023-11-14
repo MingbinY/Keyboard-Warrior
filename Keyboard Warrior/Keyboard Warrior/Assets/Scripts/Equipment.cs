@@ -19,5 +19,14 @@ namespace KeyboardWarrior
                 PlayerManager.Instance.playerEquipmentManager.UnEquip(gameObject);
             }
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.GetComponent<DeathCollider>() != null)
+            {
+                PlayerManager.Instance.playerKeyboardManager.UnuseKey(name);
+                PlayerManager.Instance.playerEquipmentManager.UnEquip(gameObject);
+            }
+        }
     }
 }

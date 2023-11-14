@@ -20,6 +20,7 @@ namespace KeyboardWarrior
         public PlayerEquipmentManager playerEquipmentManager;
         public PlayerKeyboardManager playerKeyboardManager;
         public PlayerLadderMovement ladderMovement;
+        public PlayerHealth playerHealth;
 
         protected override void Awake()
         {
@@ -30,6 +31,7 @@ namespace KeyboardWarrior
             playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
             playerKeyboardManager = GetComponent<PlayerKeyboardManager>();
             ladderMovement = GetComponent<PlayerLadderMovement>();
+            playerHealth = GetComponent<PlayerHealth>();
         }
 
         private void Start()

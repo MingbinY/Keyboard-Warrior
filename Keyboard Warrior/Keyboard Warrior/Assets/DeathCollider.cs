@@ -6,10 +6,12 @@ namespace KeyboardWarrior
 {
     public class DeathCollider : MonoBehaviour
     {
+        public bool realDeathCollider = false;
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject == PlayerManager.Instance.gameObject)
+            if (realDeathCollider && collision.gameObject == PlayerManager.Instance.gameObject)
             {
+                
                 GameManager.Instance.Respawn();
             }
         }
