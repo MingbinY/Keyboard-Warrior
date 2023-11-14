@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace KeyboardWarrior
 {
@@ -22,7 +21,7 @@ namespace KeyboardWarrior
 
         public void Respawn()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameSceneManager.Instance.ReloadScene();
         }
     }
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Character Sprite Scene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/StarWarText.unity
+    guid: 2e3beb4faf56f0e4ebecd983f93856c9
+  - enabled: 1
+    path: Assets/Scenes/Sample Scene.unity
+    guid: 71619b9726d15c240b189b089fdb0a39
   m_configObjects: {}
