@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 namespace KeyboardWarrior
 {
+    public enum DragState
+    {
+        Player,
+        InteractableObject,
+        Environment
+    }
     public class Dragable : MonoBehaviour
     {
         public Color hoverColor;
@@ -14,6 +20,10 @@ namespace KeyboardWarrior
         Vector3 startPos;
         Image image;
         GameObject playerObj;
+        public LayerMask raycastIgnoreLayers;
+
+        DragState dragState;
+        bool isDraging = false;
 
         public GameObject obstaclePrefab;
 
@@ -26,7 +36,31 @@ namespace KeyboardWarrior
 
         private void Update()
         {
-            //Debug.Log(transform.position + "," + Camera.main.ScreenToWorldPoint(transform.position));
+            if (isDraging)
+            {
+                // Mouse Raycast
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, ~raycastIgnoreLayers);
+                if (hit.collider != null)
+                {
+                    Debug.Log(hit.collider.gameObject);
+                    if (hit.collider.gameObject == PlayerManager.Instance.gameObject)
+                    {
+                        dragState = DragState.Player;
+                    }
+                    else if (hit.collider.GetComponent<InteractableObject>() != null)
+                    {
+                        dragState = DragState.InteractableObject;
+                    }
+                    else
+                    {
+                        dragState = DragState.Environment;
+                    }
+                }
+                else
+                {
+                    dragState = DragState.Environment;
+                }
+            }
             if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), equipmentName)))
             {
                 image.color = pressColor;
@@ -50,25 +84,39 @@ namespace KeyboardWarrior
         public void OnDrag()
         {
             transform.position = Input.mousePosition;
+            dragState = DragState.Environment;
+            isDraging = true;
         }
 
         public void OnEndDrag()
         {
-            Vector2 currentPos = new Vector2(GetWorldPos().x, GetWorldPos().y);
-            if (Mathf.Abs(currentPos.x - playerObj.transform.position.x) < 0.5f && Mathf.Abs(currentPos.y - playerObj.transform.position.y) < 0.5f)
+            switch (dragState)
             {
-                Debug.Log("Equip Skill");
-                PlayerManager.Instance.playerEquipmentManager.Equip(gameObject, equipmentName);
+                case DragState.Environment:
+                    //Create new obstacle
+                    if (obstaclePrefab != null)
+                    {
+                        obstaclePrefab.SetActive(true);
+                        obstaclePrefab.transform.position = new Vector3(GetWorldPos().x, GetWorldPos().y, 0);
+                    }
+                    break;
+                case DragState.Player:
+                    //Player Skill
+                    PlayerManager.Instance.playerEquipmentManager.Equip(gameObject, equipmentName);
+                    break;
+                case DragState.InteractableObject:
+                    // Interactable Object state change
+                    break;
             }
-            else
-            {
-                Debug.Log("Create New Obstacle");
-                if (obstaclePrefab != null)
-                {
-                    obstaclePrefab.SetActive(true);
-                    obstaclePrefab.transform.position = new Vector3(GetWorldPos().x, GetWorldPos().y, 0);
-                }
-            }
+            //if (Mathf.Abs(currentPos.x - playerObj.transform.position.x) < 0.5f && Mathf.Abs(currentPos.y - playerObj.transform.position.y) < 0.5f)
+            //{
+            //    Debug.Log("Equip Skill");   
+            //}
+            //else
+            //{
+            //    Debug.Log("Create New Obstacle");
+                
+            //}
             OnEndHover();
             PlayerManager.Instance.playerKeyboardManager.UseKey(name);
             transform.position = startPos;

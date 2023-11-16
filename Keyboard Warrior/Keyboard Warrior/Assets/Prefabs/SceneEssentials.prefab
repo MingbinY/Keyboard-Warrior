@@ -1143,6 +1143,7 @@ MonoBehaviour:
   playerEquipmentManager: {fileID: 0}
   playerKeyboardManager: {fileID: 0}
   ladderMovement: {fileID: 0}
+  playerHealth: {fileID: 0}
 --- !u!114 &4728695934725913725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipments: []
+  invulnerableTime: 5
 --- !u!114 &3740181961980706633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,11 +3409,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 111068118155652606}
   - {fileID: 4386722936876696122}
   - {fileID: 325230472276398279}
   - {fileID: 457914402381543860}
   - {fileID: 326954144117393349}
-  - {fileID: 111068118155652606}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7232720190511265814
