@@ -9,6 +9,14 @@ namespace KeyboardWarrior
         public float placeRadius = 5f;
         public float returnRadius = 10f;
 
+        public GameObject indicatorObject;
+        public bool dragging = false;
+
+        private void Update()
+        {
+            indicatorObject.SetActive(dragging);
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;

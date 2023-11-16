@@ -16,7 +16,7 @@ namespace KeyboardWarrior
 
         private void Update()
         {
-            if (Mathf.Abs(playerObj.transform.position.x - transform.position.x) > 5f)
+            if (Mathf.Abs(playerObj.transform.position.x - transform.position.x) > PlayerManager.Instance.playerDragManager.returnRadius)
             {
                 if (relatedKeyUI)
                 {

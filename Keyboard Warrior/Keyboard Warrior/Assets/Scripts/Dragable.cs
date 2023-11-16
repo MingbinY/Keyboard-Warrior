@@ -86,6 +86,7 @@ namespace KeyboardWarrior
             transform.position = Input.mousePosition;
             dragState = DragState.Environment;
             isDraging = true;
+            PlayerManager.Instance.playerDragManager.dragging = true;
         }
 
         public void OnEndDrag()
@@ -115,8 +116,9 @@ namespace KeyboardWarrior
             //else
             //{
             //    Debug.Log("Create New Obstacle");
-                
+
             //}
+            PlayerManager.Instance.playerDragManager.dragging = false;
             OnEndHover();
             PlayerManager.Instance.playerKeyboardManager.UseKey(name);
             transform.position = startPos;
