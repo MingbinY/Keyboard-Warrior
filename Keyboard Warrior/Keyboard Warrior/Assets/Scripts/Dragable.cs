@@ -105,7 +105,7 @@ namespace KeyboardWarrior
                     break;
                 case DragState.Player:
                     //Player Skill
-                    PlayerManager.Instance.playerEquipmentManager.Equip(gameObject, enchantmentDirection);
+                    playerObj.GetComponent<InteractableObject>().OnInteract(enchantmentDirection);
                     break;
                 case DragState.InteractableObject:
                     // Interactable Object state change

@@ -22,5 +22,6 @@ namespace KeyboardWarrior
         public virtual void RightEvent() { }
         public virtual void SpaceEvent() { }
         public virtual void BaseEvent() { }
+        public virtual void RetrieveEvent() { }
     }
 }
