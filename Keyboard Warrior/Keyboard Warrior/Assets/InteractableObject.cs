@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace KeyboardWarrior
 {
@@ -12,10 +13,19 @@ namespace KeyboardWarrior
         public GameObject leftObject;
         public GameObject rightObject;
 
-        public void OnInteract(string name)
+        public UnityEvent upEvent;
+        public UnityEvent downEvent;
+        public UnityEvent leftEvent;
+        public UnityEvent rightEvent;
+        public UnityEvent baseEvent;
+
+        public float enchantTime;
+
+        public void OnInteract(string enchantDirection)
         {
             idleObject.SetActive(false);
-            switch (name)
+            Debug.Log(enchantDirection + "enchantDirection");
+            switch (enchantDirection)
             {
                 case "W":
                     upObject.SetActive(true);
@@ -30,6 +40,30 @@ namespace KeyboardWarrior
                     rightObject.SetActive(true);
                 break;
             }
+            StartCoroutine(Enchantment(enchantDirection));
+        }
+
+        IEnumerator Enchantment(string direction)
+        {
+            switch (direction)
+            {
+                case "W":
+                    upEvent.Invoke();
+                    break;
+                case "S":
+                    downEvent.Invoke();
+                    break;
+                case "A":
+                    leftEvent.Invoke();
+                    break;
+                case "D":
+                    rightEvent.Invoke();
+                    break;
+            }
+
+            yield return new WaitForSeconds(enchantTime);
+            baseEvent.Invoke();
+            PlayerManager.Instance.playerSkillManager.RetrieveEnchantment(direction);
         }
     }
 }

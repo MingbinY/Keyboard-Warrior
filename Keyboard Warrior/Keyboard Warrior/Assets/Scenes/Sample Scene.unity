@@ -59698,11 +59698,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 769573599}
-  - component: {fileID: 769573598}
   - component: {fileID: 769573601}
   - component: {fileID: 769573600}
+  - component: {fileID: 769573598}
+  - component: {fileID: 769573602}
   m_Layer: 0
-  m_Name: InteractableObject
+  m_Name: MovingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59725,6 +59726,82 @@ MonoBehaviour:
   downObject: {fileID: 506538239}
   leftObject: {fileID: 1977881500}
   rightObject: {fileID: 1804332137}
+  upEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769573602}
+        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
+        m_MethodName: UpEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  downEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769573602}
+        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
+        m_MethodName: DownEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769573602}
+        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
+        m_MethodName: LeftEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769573602}
+        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
+        m_MethodName: RightEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  baseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769573602}
+        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
+        m_MethodName: BaseEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  enchantTime: 5
 --- !u!4 &769573599
 Transform:
   m_ObjectHideFlags: 0
@@ -59734,7 +59811,7 @@ Transform:
   m_GameObject: {fileID: 769573597}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.81, y: 4.23, z: 0}
+  m_LocalPosition: {x: 3.5600004, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59817,6 +59894,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &769573602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769573597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e69363e575980e4fa3ce9313c83c009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
 --- !u!1 &815471231
 GameObject:
   m_ObjectHideFlags: 0
@@ -61427,6 +61517,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -13.881854
       objectReference: {fileID: 0}
+    - target: {fileID: 950204284888777928, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: obstacleName
+      value: D
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222855989640850330, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: obstacleName
+      value: Space
+      objectReference: {fileID: 0}
     - target: {fileID: 1853643799267380172, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: indicator
       value: 
@@ -61443,6 +61541,22 @@ PrefabInstance:
       propertyPath: indicatorObject
       value: 
       objectReference: {fileID: 515149208}
+    - target: {fileID: 2697699470613755353, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802467037950263866, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802467037950263866, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: cdfbdb4b-cd1e-40e7-b318-774643e0a8b1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802467037950263866, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: Player/Retrieve[/Keyboard/w]
+      objectReference: {fileID: 0}
     - target: {fileID: 3740181961980706633, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: retrieveTime
       value: 3
@@ -61487,9 +61601,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4829849559776168115, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: obstacleName
+      value: S
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832487359739520478, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: obstacleName
+      value: A
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037377181525038925, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142060674019338344, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822863314153399318, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 7195904209921935328, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_Name
       value: SceneEssentials
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170034280141778349, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: obstacleName
+      value: W
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61497,13 +61635,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4386722936876696122, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       insertIndex: -1
       addedObject: {fileID: 515149209}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1537675858532201670, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4763555387227393409}
   m_SourcePrefab: {fileID: 100100000, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+--- !u!1 &4763555387227393406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1537675858532201670, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+  m_PrefabInstance: {fileID: 4763555387227393405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4763555387227393408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4386722936876696122, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
   m_PrefabInstance: {fileID: 4763555387227393405}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4763555387227393409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4763555387227393406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92192db9baab5f948a4f857ff9b89ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
