@@ -19,11 +19,36 @@ namespace KeyboardWarrior
         public bool pressedD = false;
         public bool pressedSpace = false;
 
+        float retrieveTimer = 0;
+        public float retrieveTime = 5f;
+        bool activatedRetrieve = false;
+
         private void Start()
         {
             inputManager = PlayerManager.Instance.inputManager;
         }
 
+        private void Update()
+        {
+            pressedW = inputManager.retrieveInput;
+            if (pressedW )
+            {
+                retrieveTimer += Time.deltaTime;
+            }
+            else
+            {
+                retrieveTimer = 0;
+                activatedRetrieve = false;
+            }
+
+            if (retrieveTimer >= retrieveTime)
+            {
+                activatedRetrieve = true;
+                RetrieveKeys();
+            }
+        }
+
+        #region Enable and Disable Keys
         public void UseKey(string name)
         {
             switch (name)
@@ -65,6 +90,30 @@ namespace KeyboardWarrior
                 case "Space":
                     canUseSpace = true;
                     break;
+            }
+        }
+        #endregion
+        private void RetrieveKeys()
+        {
+            Equipment[] equipments = FindObjectsOfType<Equipment>();
+            KeyboardObstacle[] obstacles = FindObjectsOfType<KeyboardObstacle>();
+
+            foreach (Equipment equipment in equipments)
+            {
+                if (equipment.gameObject.activeSelf)
+                {
+                    PlayerManager.Instance.playerEquipmentManager.UnEquip(equipment.gameObject);
+                }
+            }
+
+            foreach (KeyboardObstacle obstacle in obstacles)
+            {
+                if (obstacle.gameObject.activeSelf)
+                {
+                    obstacle.relatedKeyUI.SetActive(true);
+                    obstacle.gameObject.SetActive(false);
+                    PlayerManager.Instance.playerKeyboardManager.UnuseKey(obstacle.name);
+                }
             }
         }
     }

@@ -9,6 +9,7 @@ namespace KeyboardWarrior
     {
         GameObject playerObj;
         public GameObject relatedKeyUI;
+        public string obstacleName;
         private void Start()
         {
             playerObj = PlayerManager.Instance.gameObject;
@@ -16,13 +17,11 @@ namespace KeyboardWarrior
 
         private void Update()
         {
-            if (Mathf.Abs(playerObj.transform.position.x - transform.position.x) > 5f)
+            if (Mathf.Abs(playerObj.transform.position.x - transform.position.x) > PlayerManager.Instance.playerDragManager.returnRadius)
             {
                 if (relatedKeyUI)
                 {
-                    relatedKeyUI.SetActive(true);
-                    gameObject.SetActive(false);
-                    PlayerManager.Instance.playerKeyboardManager.UnuseKey(name);
+                    PlayerManager.Instance.playerSkillManager.RetrieveObstacle(this);
                 }
             }
         }

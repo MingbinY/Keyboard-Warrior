@@ -5,15 +5,25 @@ using UnityEngine.UI;
 
 namespace KeyboardWarrior
 {
+    public enum DragState
+    {
+        Player,
+        InteractableObject,
+        Environment
+    }
     public class Dragable : MonoBehaviour
     {
         public Color hoverColor;
         public Color pressColor;
-        public string equipmentName;
+        public string enchantmentDirection;
         Color defaultColor = Color.white;
         Vector3 startPos;
         Image image;
         GameObject playerObj;
+        public LayerMask raycastIgnoreLayers;
+        GameObject rayHitObject;
+        DragState dragState;
+        bool isDraging = false;
 
         public GameObject obstaclePrefab;
 
@@ -26,12 +36,38 @@ namespace KeyboardWarrior
 
         private void Update()
         {
-            //Debug.Log(transform.position + "," + Camera.main.ScreenToWorldPoint(transform.position));
-            if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), equipmentName)))
+            if (isDraging)
+            {
+                // Mouse Raycast
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, ~raycastIgnoreLayers);
+                if (hit.collider != null)
+                {
+                    rayHitObject = hit.collider.gameObject;
+                    Debug.Log(hit.collider.gameObject);
+                    if (hit.collider.gameObject == PlayerManager.Instance.gameObject)
+                    {
+                        dragState = DragState.Player;
+                    }
+                    else if (hit.collider.GetComponent<InteractableObject>() != null)
+                    {
+                        dragState = DragState.InteractableObject;
+                    }
+                    else
+                    {
+                        dragState = DragState.Environment;
+                    }
+                }
+                else
+                {
+                    rayHitObject = null;
+                    dragState = DragState.Environment;
+                }
+            }
+            if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), name)))
             {
                 image.color = pressColor;
             }
-            if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), equipmentName)))
+            if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), name)))
             {
                 image.color = defaultColor;
             }
@@ -50,29 +86,46 @@ namespace KeyboardWarrior
         public void OnDrag()
         {
             transform.position = Input.mousePosition;
+            dragState = DragState.Environment;
+            isDraging = true;
+            PlayerManager.Instance.playerDragManager.dragging = true;
         }
 
         public void OnEndDrag()
         {
-            Vector2 currentPos = new Vector2(GetWorldPos().x, GetWorldPos().y);
-            if (Mathf.Abs(currentPos.x - playerObj.transform.position.x) < 0.5f && Mathf.Abs(currentPos.y - playerObj.transform.position.y) < 0.5f)
+            switch (dragState)
             {
-                Debug.Log("Equip Skill");
-                PlayerManager.Instance.playerEquipmentManager.Equip(gameObject, equipmentName);
+                case DragState.Environment:
+                    //Create new obstacle
+                    if (obstaclePrefab != null)
+                    {
+                        obstaclePrefab.SetActive(true);
+                        obstaclePrefab.transform.position = new Vector3(GetWorldPos().x, GetWorldPos().y, 0);
+                    }
+                    break;
+                case DragState.Player:
+                    //Player Skill
+                    PlayerManager.Instance.playerEquipmentManager.Equip(gameObject, enchantmentDirection);
+                    break;
+                case DragState.InteractableObject:
+                    // Interactable Object state change
+                    rayHitObject.GetComponent<InteractableObject>().OnInteract(enchantmentDirection);
+                    break;
             }
-            else
-            {
-                Debug.Log("Create New Obstacle");
-                if (obstaclePrefab != null)
-                {
-                    obstaclePrefab.SetActive(true);
-                    obstaclePrefab.transform.position = new Vector3(GetWorldPos().x, GetWorldPos().y, 0);
-                }
-            }
+            //if (Mathf.Abs(currentPos.x - playerObj.transform.position.x) < 0.5f && Mathf.Abs(currentPos.y - playerObj.transform.position.y) < 0.5f)
+            //{
+            //    Debug.Log("Equip Skill");   
+            //}
+            //else
+            //{
+            //    Debug.Log("Create New Obstacle");
+
+            //}
+            PlayerManager.Instance.playerDragManager.dragging = false;
             OnEndHover();
             PlayerManager.Instance.playerKeyboardManager.UseKey(name);
             transform.position = startPos;
-            Debug.Log(equipmentName + " " + transform.position);
+            Debug.Log(enchantmentDirection + " " + transform.position);
             gameObject.SetActive(false);
         }
 
