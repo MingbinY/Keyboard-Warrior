@@ -20,8 +20,29 @@ namespace KeyboardWarrior
         public UnityEvent rightEvent;
         public UnityEvent spaceEvent;
         public UnityEvent baseEvent;
+        public UnityEvent retrieveEvent;
 
         public float enchantTime;
+
+        private void Start()
+        {
+            EnchantableObject enchantable = GetComponent<EnchantableObject>();
+            if (enchantable != null )
+            {
+                upEvent.AddListener(enchantable.UpEvent);
+                downEvent.AddListener(enchantable.DownEvent);
+                leftEvent.AddListener (enchantable.LeftEvent);
+                rightEvent.AddListener(enchantable.RightEvent);
+                baseEvent.AddListener(enchantable.BaseEvent);
+                spaceEvent.AddListener(enchantable.SpaceEvent);
+                retrieveEvent.AddListener(enchantable.RetrieveEvent);
+            }
+        }
+
+        public void RetrieveEvent()
+        {
+            retrieveEvent.Invoke();
+        }
 
         public void OnInteract(string enchantDirection)
         {
@@ -71,7 +92,6 @@ namespace KeyboardWarrior
 
             yield return new WaitForSeconds(enchantTime);
             baseEvent.Invoke();
-            PlayerManager.Instance.playerSkillManager.RetrieveEnchantment(direction);
         }
     }
 }

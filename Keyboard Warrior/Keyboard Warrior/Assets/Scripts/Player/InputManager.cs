@@ -32,6 +32,7 @@ namespace KeyboardWarrior
             inputActions.Player.Jump.performed += JumpInput;
             inputActions.Player.Retrieve.started += i => retrieveInput = true;
             inputActions.Player.Retrieve.canceled += i => retrieveInput = false;
+            inputActions.Player.Restart.performed += RespawnInput;
         }
 
         private void Start()
@@ -56,7 +57,7 @@ namespace KeyboardWarrior
             if (!keyboardManager.canUseSpace) return;
             if (context.performed)
                 keyboardManager.pressedSpace = true;
-                playerMovement.HandleJump();
+            playerMovement.HandleJump();
         }
 
         public void MoveInput(Vector2 value)
@@ -64,8 +65,8 @@ namespace KeyboardWarrior
             if (!keyboardManager.canUseA && value.x == -1) return;
             if (!keyboardManager.canUseD && value.x == 1) return;
 
-            keyboardManager.pressedA = value.x == -1 ?  true : false;
-            keyboardManager.pressedD = value.x == 1 ?  true : false;
+            keyboardManager.pressedA = value.x == -1 ? true : false;
+            keyboardManager.pressedD = value.x == 1 ? true : false;
 
             movementInput = value;
             playerMovement.HandleMove(value);
@@ -76,6 +77,11 @@ namespace KeyboardWarrior
             if (!keyboardManager.canUseW) return;
             climbInput = value;
             ladderMovement.StartClimbing(value.y);
+        }
+
+        public void RespawnInput(InputAction.CallbackContext context)
+        {
+            GameManager.Instance.Respawn();
         }
     }
 }

@@ -49,9 +49,9 @@ namespace KeyboardWarrior
         }
 
         #region Enable and Disable Keys
-        public void UseKey(string name)
+        public void UseKey(string keyName)
         {
-            switch (name)
+            switch (keyName)
             {
                 case "W":
                     canUseW = false;
@@ -71,9 +71,9 @@ namespace KeyboardWarrior
             }
         }
 
-        public void UnuseKey(string name)
+        public void UnuseKey(string keyName)
         {
-            switch (name)
+            switch (keyName)
             {
                 case "W":
                     canUseW = true;
@@ -95,24 +95,19 @@ namespace KeyboardWarrior
         #endregion
         private void RetrieveKeys()
         {
-            Equipment[] equipments = FindObjectsOfType<Equipment>();
+            string[] keys = { "W", "A", "S", "D", "Space" };
             KeyboardObstacle[] obstacles = FindObjectsOfType<KeyboardObstacle>();
 
-            foreach (Equipment equipment in equipments)
+            foreach (string key in keys)
             {
-                if (equipment.gameObject.activeSelf)
-                {
-                    PlayerManager.Instance.playerEquipmentManager.UnEquip(equipment.gameObject);
-                }
+                PlayerManager.Instance.playerSkillManager.RetrieveEnchantment(key);
             }
 
             foreach (KeyboardObstacle obstacle in obstacles)
             {
                 if (obstacle.gameObject.activeSelf)
                 {
-                    obstacle.relatedKeyUI.SetActive(true);
-                    obstacle.gameObject.SetActive(false);
-                    PlayerManager.Instance.playerKeyboardManager.UnuseKey(obstacle.name);
+                    PlayerManager.Instance.playerSkillManager.RetrieveObstacle(obstacle);
                 }
             }
         }
