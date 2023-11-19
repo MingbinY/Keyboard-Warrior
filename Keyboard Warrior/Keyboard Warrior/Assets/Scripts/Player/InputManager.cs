@@ -14,6 +14,7 @@ namespace KeyboardWarrior
         public Vector2 movementInput;
         public Vector2 climbInput;
         public bool jumpInput;
+        public bool retrieveInput;
 
         private void OnEnable()
         {
@@ -29,6 +30,8 @@ namespace KeyboardWarrior
             inputActions = new PlayerInputActions();
             inputActions.Player.Enable();
             inputActions.Player.Jump.performed += JumpInput;
+            inputActions.Player.Retrieve.started += i => retrieveInput = true;
+            inputActions.Player.Retrieve.canceled += i => retrieveInput = false;
         }
 
         private void Start()
@@ -42,6 +45,10 @@ namespace KeyboardWarrior
         {
             MoveInput(inputActions.Player.Move.ReadValue<Vector2>());
             ClimbInput(inputActions.Player.Climb.ReadValue<Vector2>());
+            if (retrieveInput)
+            {
+
+            }
         }
 
         public void JumpInput(InputAction.CallbackContext context)

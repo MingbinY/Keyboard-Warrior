@@ -61419,6 +61419,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -13.881854
       objectReference: {fileID: 0}
+    - target: {fileID: 338635399340433871, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 457914402381543860, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.881854
@@ -61428,9 +61432,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1853643799267380172, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: placeRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853643799267380172, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: returnRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853643799267380172, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: indicatorObject
       value: 
       objectReference: {fileID: 515149208}
+    - target: {fileID: 3740181961980706633, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: retrieveTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4666987991852918810, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.881854
