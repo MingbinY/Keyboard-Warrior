@@ -16,48 +16,57 @@ namespace KeyboardWarrior
         public override void UpEvent()
         {
             Debug.Log("UP");
-            currentDirection = DirectionType.up;
+            currentEnchant = EnchantType.up;
         }
         public override void DownEvent()
         {
-            currentDirection = DirectionType.down;
+            currentEnchant = EnchantType.down;
         }
         public override void LeftEvent()
         {
             Debug.Log("Left");
-            currentDirection = DirectionType.left;
+            currentEnchant = EnchantType.left;
         }
         public override void RightEvent()
         {
-            currentDirection = DirectionType.right;
+            currentEnchant = EnchantType.right;
         }
         public override void BaseEvent()
         {
-            currentDirection = DirectionType.idle;
+            currentEnchant = EnchantType.idle;
+        }
+        public override void SpaceEvent()
+        {
+            currentEnchant = EnchantType.space;
         }
 
         private void Update()
         {
             Vector2 velocity = Vector2.zero;
-            switch (currentDirection)
+            Vector2 scale = Vector2.one;
+            switch (currentEnchant)
             {
-                case DirectionType.up:
+                case EnchantType.up:
                     velocity.y = 1;
                     break;
-                case DirectionType.down:
+                case EnchantType.down:
                     velocity.y = -1;
                     break;
-                case DirectionType.left:
+                case EnchantType.left:
                     velocity.x = -1;
                     break;
-                case DirectionType.right:
+                case EnchantType.right:
                     velocity.x = 1;
+                    break;
+                case EnchantType.space:
+                    scale = Vector2.one * 2;
                     break;
                 default:
                     velocity = Vector2.zero;
                     break;
             }
             rb.velocity = velocity * moveSpeed;
+            transform.localScale = scale;
         }
     }
 }

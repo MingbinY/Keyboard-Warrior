@@ -12,11 +12,13 @@ namespace KeyboardWarrior
         public GameObject downObject;
         public GameObject leftObject;
         public GameObject rightObject;
+        public GameObject spaceObject;
 
         public UnityEvent upEvent;
         public UnityEvent downEvent;
         public UnityEvent leftEvent;
         public UnityEvent rightEvent;
+        public UnityEvent spaceEvent;
         public UnityEvent baseEvent;
 
         public float enchantTime;
@@ -38,7 +40,10 @@ namespace KeyboardWarrior
                     break;
                 case "D":
                     rightObject.SetActive(true);
-                break;
+                    break;
+                case "Space":
+                    spaceObject.SetActive(true);
+                    break;
             }
             StartCoroutine(Enchantment(enchantDirection));
         }
@@ -58,6 +63,9 @@ namespace KeyboardWarrior
                     break;
                 case "D":
                     rightEvent.Invoke();
+                    break;
+                case "Space":
+                    spaceEvent.Invoke();
                     break;
             }
 

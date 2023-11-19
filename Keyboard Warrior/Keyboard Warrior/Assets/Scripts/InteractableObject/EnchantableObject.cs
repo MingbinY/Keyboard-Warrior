@@ -4,21 +4,23 @@ using UnityEngine;
 
 namespace KeyboardWarrior
 {
-    public enum DirectionType
+    public enum EnchantType
     {
         up,
         down,
         left,
         right,
-        idle
+        idle,
+        space,
     }
     public class EnchantableObject : MonoBehaviour
     {
-        public DirectionType currentDirection;
+        public EnchantType currentEnchant = EnchantType.idle;
         public virtual void UpEvent() {}
         public virtual void DownEvent() { }
         public virtual void LeftEvent() { }
         public virtual void RightEvent() { }
+        public virtual void SpaceEvent() { }
         public virtual void BaseEvent() { }
     }
 }
