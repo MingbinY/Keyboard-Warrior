@@ -11,7 +11,7 @@ namespace KeyboardWarrior
         InputManager playerInput;
         PlayerMovement playerMovement;
         public GameObject playerSprite;
-        bool faceLeft = false;
+        bool faceLeft = true;
 
         private void Awake()
         {
@@ -37,7 +37,7 @@ namespace KeyboardWarrior
         {
             Vector2 movementValue = playerInput.movementInput;
             if (movementValue == Vector2.zero) return;
-            faceLeft = movementValue.x < 0 ? true : false;
+            faceLeft = movementValue.x < 0 ? false : true;
         }
     }
 }
