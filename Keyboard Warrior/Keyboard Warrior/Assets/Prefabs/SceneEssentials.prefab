@@ -1151,15 +1151,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6b451df8c0bc549b1fbc1027591095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  playerAnimationManager: {fileID: 0}
-  playerMovement: {fileID: 0}
-  playerEquipmentManager: {fileID: 0}
-  playerKeyboardManager: {fileID: 0}
-  ladderMovement: {fileID: 0}
-  playerHealth: {fileID: 0}
-  playerDragManager: {fileID: 0}
-  playerSkillManager: {fileID: 0}
+  inputManager: {fileID: 4728695934725913725}
+  playerAnimationManager: {fileID: 4676059891265398727}
+  playerMovement: {fileID: 9035681940188442460}
+  playerEquipmentManager: {fileID: 7774474149677472739}
+  playerKeyboardManager: {fileID: 3740181961980706633}
+  ladderMovement: {fileID: 6871027087456892464}
+  playerHealth: {fileID: 5539805570702560702}
+  playerDragManager: {fileID: 1853643799267380172}
+  playerSkillManager: {fileID: 4728897999398829530}
 --- !u!114 &4728695934725913725
 MonoBehaviour:
   m_ObjectHideFlags: 0
