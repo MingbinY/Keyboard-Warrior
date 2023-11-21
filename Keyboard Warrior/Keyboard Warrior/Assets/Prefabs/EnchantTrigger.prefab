@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enchantType: 0
-  eventLastTime: 5
+  eventLastTime: 3
   enchanted: 0
 --- !u!114 &8818170143660788094
 MonoBehaviour:
