@@ -8,5 +8,10 @@ namespace KeyboardWarrior
     {
         public virtual void TriggerEvent(GameObject gameObject) { }
         protected virtual IEnumerator EventSequence(GameObject other) { yield return null; }
+
+        protected virtual void ChangeEnchantType(EnchantType enchantType)
+        {
+
+        }
     }
 }

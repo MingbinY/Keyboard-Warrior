@@ -93,5 +93,7 @@ namespace KeyboardWarrior
             yield return new WaitForSeconds(enchantTime);
             baseEvent.Invoke();
         }
+
+        
     }
 }

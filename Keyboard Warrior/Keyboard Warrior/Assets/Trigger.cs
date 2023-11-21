@@ -23,7 +23,7 @@ namespace KeyboardWarrior
                 triggerEvent.Invoke(other.gameObject);
                 if (destroyAfterTrigger )
                 {
-                    GetComponent<Collider2D>().enabled = false;
+                    GetComponent<Collider2D>().enabled = false;  
                 }
             }
         }
