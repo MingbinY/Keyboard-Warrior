@@ -39,12 +39,28 @@ namespace KeyboardWarrior
                     spaceUI.SetActive(true);
                     break;
             }
+            
+            PlayerManager.Instance.playerKeyboardManager.UnuseKey(enchantName);
+        }
+
+        public void RetrieveAllEnchantment()
+        {
+            wUI.SetActive(true);
+            aUI.SetActive(true);
+            sUI.SetActive(true);
+            dUI.SetActive(true);
+            spaceUI.SetActive(true);
+            PlayerManager.Instance.playerKeyboardManager.UnuseKey("W");
+            PlayerManager.Instance.playerKeyboardManager.UnuseKey("A");
+            PlayerManager.Instance.playerKeyboardManager.UnuseKey("S");
+            PlayerManager.Instance.playerKeyboardManager.UnuseKey("D");
+            PlayerManager.Instance.playerKeyboardManager.UnuseKey("Space");
             InteractableObject[] enchantableObjects = FindObjectsOfType<InteractableObject>();
             foreach (InteractableObject obj in enchantableObjects)
             {
-                obj.RetrieveEvent();
+                if (obj != this.gameObject)
+                    obj.RetrieveEvent();
             }
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey(enchantName);
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
