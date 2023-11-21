@@ -37,7 +37,6 @@ namespace KeyboardWarrior
         {
             Debug.Log("Player Base Event");
             currentEnchant = EnchantType.idle;
-            rb.gravityScale = 1;
             enchanted = false;
         }
         public override void SpaceEvent()
