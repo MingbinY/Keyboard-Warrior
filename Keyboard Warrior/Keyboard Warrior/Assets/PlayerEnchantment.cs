@@ -48,8 +48,8 @@ namespace KeyboardWarrior
 
         private void Update()
         {
-            if (!enchanted) return;
-            rb.gravityScale = 0;
+            rb.gravityScale = enchanted ? 0 : 1;
+
             Vector2 velocity = Vector2.zero;
             Vector2 scale = Vector2.one;
             switch (currentEnchant)
