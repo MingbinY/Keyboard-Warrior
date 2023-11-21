@@ -66,9 +66,28 @@ namespace KeyboardWarrior
             other.GetComponent<InteractableObject>().baseEvent.Invoke();
         }
 
-        protected override void ChangeEnchantType(EnchantType newType)
+        public override void ChangeEnchantType(string newType)
         {
-            enchantType = newType;
+            EnchantType newEType = EnchantType.idle;
+            switch (newType)
+            {
+                case "W":
+                    newEType = EnchantType.up;
+                    break;
+                case "A":
+                    newEType = EnchantType.left;
+                    break;
+                case "D":
+                    newEType = EnchantType.right;
+                    break;
+                case "S":
+                    newEType = EnchantType.down;
+                    break;
+                case "Space":
+                    newEType = EnchantType.space;
+                break;
+            }
+            enchantType = newEType;
             enchanted = false;
         }
     }
