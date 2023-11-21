@@ -47,7 +47,7 @@ namespace KeyboardWarrior
 
         private void Update()
         {
-            rb.gravityScale = enchanted ? 0 : 1;
+            rb.bodyType = enchanted ? RigidbodyType2D.Kinematic : RigidbodyType2D.Dynamic;
             if (!enchanted) return;
             Vector2 velocity = Vector2.zero;
             Vector2 scale = Vector2.one;
@@ -55,15 +55,19 @@ namespace KeyboardWarrior
             {
                 case EnchantType.up:
                     velocity.y = 1;
+                    velocity.x = 0;
                     break;
                 case EnchantType.down:
                     velocity.y = -1;
+                    velocity.x = 0;
                     break;
                 case EnchantType.left:
                     velocity.x = -1;
+                    velocity.y = 0;
                     break;
                 case EnchantType.right:
                     velocity.x = 1;
+                    velocity.y = 0;
                     break;
                 case EnchantType.space:
                     scale = Vector2.one * 2;
