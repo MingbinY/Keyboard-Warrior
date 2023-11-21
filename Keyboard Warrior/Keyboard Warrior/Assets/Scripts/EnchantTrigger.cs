@@ -88,7 +88,7 @@ namespace KeyboardWarrior
                 break;
             }
             enchantType = newEType;
-            enchanted = false;
+            enchanted = true;
         }
     }
 }
