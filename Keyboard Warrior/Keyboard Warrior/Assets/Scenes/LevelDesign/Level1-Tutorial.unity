@@ -1577,6 +1577,7 @@ GameObject:
   - component: {fileID: 534874584}
   - component: {fileID: 534874585}
   - component: {fileID: 534874586}
+  - component: {fileID: 534874587}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -1726,6 +1727,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enchantType: 3
   eventLastTime: 3
+--- !u!114 &534874587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534874581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9788db75e0f55dd438e4372f93ee98d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleObject: {fileID: 0}
+  upObject: {fileID: 0}
+  downObject: {fileID: 0}
+  leftObject: {fileID: 0}
+  rightObject: {fileID: 0}
+  spaceObject: {fileID: 0}
+  upEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  downEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  spaceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  baseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  retrieveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enchantTime: 0
 --- !u!1 &540872607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,6 +1924,7 @@ GameObject:
   - component: {fileID: 562856270}
   - component: {fileID: 562856271}
   - component: {fileID: 562856272}
+  - component: {fileID: 562856273}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -2032,6 +2074,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enchantType: 1
   eventLastTime: 3
+--- !u!114 &562856273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562856267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9788db75e0f55dd438e4372f93ee98d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleObject: {fileID: 0}
+  upObject: {fileID: 0}
+  downObject: {fileID: 0}
+  leftObject: {fileID: 0}
+  rightObject: {fileID: 0}
+  spaceObject: {fileID: 0}
+  upEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  downEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  spaceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  baseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  retrieveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enchantTime: 0
 --- !u!1 &616173604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4264282463203081131, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
@@ -64810,6 +64892,7 @@ GameObject:
   - component: {fileID: 1520622870}
   - component: {fileID: 1520622871}
   - component: {fileID: 1520622872}
+  - component: {fileID: 1520622873}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -64959,6 +65042,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enchantType: 0
   eventLastTime: 3
+--- !u!114 &1520622873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520622867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9788db75e0f55dd438e4372f93ee98d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleObject: {fileID: 0}
+  upObject: {fileID: 0}
+  downObject: {fileID: 0}
+  leftObject: {fileID: 0}
+  rightObject: {fileID: 0}
+  spaceObject: {fileID: 0}
+  upEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  downEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  spaceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  baseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  retrieveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enchantTime: 0
 --- !u!1 &1682798276
 GameObject:
   m_ObjectHideFlags: 0
@@ -65056,6 +65179,7 @@ GameObject:
   - component: {fileID: 1700965570}
   - component: {fileID: 1700965571}
   - component: {fileID: 1700965572}
+  - component: {fileID: 1700965573}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -65205,6 +65329,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enchantType: 0
   eventLastTime: 3
+--- !u!114 &1700965573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700965567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9788db75e0f55dd438e4372f93ee98d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleObject: {fileID: 0}
+  upObject: {fileID: 0}
+  downObject: {fileID: 0}
+  leftObject: {fileID: 0}
+  rightObject: {fileID: 0}
+  spaceObject: {fileID: 0}
+  upEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  downEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  spaceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  baseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  retrieveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enchantTime: 0
 --- !u!1 &1779180438
 GameObject:
   m_ObjectHideFlags: 0
@@ -65348,6 +65512,7 @@ GameObject:
   - component: {fileID: 1788222852}
   - component: {fileID: 1788222853}
   - component: {fileID: 1788222854}
+  - component: {fileID: 1788222855}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -65497,6 +65662,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enchantType: 2
   eventLastTime: 3
+--- !u!114 &1788222855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788222849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9788db75e0f55dd438e4372f93ee98d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleObject: {fileID: 0}
+  upObject: {fileID: 0}
+  downObject: {fileID: 0}
+  leftObject: {fileID: 0}
+  rightObject: {fileID: 0}
+  spaceObject: {fileID: 0}
+  upEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  downEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  spaceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  baseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  retrieveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enchantTime: 0
 --- !u!1 &1788528072
 GameObject:
   m_ObjectHideFlags: 0
@@ -65827,6 +66032,7 @@ GameObject:
   - component: {fileID: 1863764421}
   - component: {fileID: 1863764422}
   - component: {fileID: 1863764423}
+  - component: {fileID: 1863764424}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -65976,6 +66182,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enchantType: 0
   eventLastTime: 5
+--- !u!114 &1863764424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863764418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9788db75e0f55dd438e4372f93ee98d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleObject: {fileID: 0}
+  upObject: {fileID: 0}
+  downObject: {fileID: 0}
+  leftObject: {fileID: 0}
+  rightObject: {fileID: 0}
+  spaceObject: {fileID: 0}
+  upEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  downEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  spaceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  baseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  retrieveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enchantTime: 0
 --- !u!1 &1946718617
 GameObject:
   m_ObjectHideFlags: 0
