@@ -66078,7 +66078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEnchant: 4
   enchanted: 0
-  moveSpeed: 0
+  moveSpeed: 2
 --- !u!114 &1946718621
 MonoBehaviour:
   m_ObjectHideFlags: 0
