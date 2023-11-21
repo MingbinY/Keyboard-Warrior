@@ -23,6 +23,7 @@ namespace KeyboardWarrior
         public PlayerHealth playerHealth;
         public PlayerDragManager playerDragManager;
         public PlayerSkillManager playerSkillManager;
+        public PlayerEnchantment playerEnchantment;
 
         protected override void Awake()
         {
@@ -36,6 +37,7 @@ namespace KeyboardWarrior
             playerHealth = GetComponent<PlayerHealth>();
             playerDragManager = GetComponent<PlayerDragManager>();
             playerSkillManager = GetComponent<PlayerSkillManager>();
+            playerEnchantment = GetComponent<PlayerEnchantment>();
         }
 
         private void Start()

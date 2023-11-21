@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace KeyboardWarrior
 {
@@ -30,6 +31,7 @@ namespace KeyboardWarrior
 
         private void Update()
         {
+            KeyUIColor();
             pressedW = inputManager.retrieveInput;
             if (pressedW )
             {
@@ -46,6 +48,12 @@ namespace KeyboardWarrior
                 activatedRetrieve = true;
                 RetrieveKeys();
             }
+        }
+
+        public void KeyUIColor()
+        {
+            pressedA = inputManager.movementInput.x == -1 ? true : false;
+            pressedD = inputManager.movementInput.x == 1 ? true : false;
         }
 
         #region Enable and Disable Keys

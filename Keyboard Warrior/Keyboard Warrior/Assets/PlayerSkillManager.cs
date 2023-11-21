@@ -46,5 +46,13 @@ namespace KeyboardWarrior
             }
             PlayerManager.Instance.playerKeyboardManager.UnuseKey(enchantName);
         }
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            EnchantableObject enchantableObject = other.GetComponent<EnchantableObject>();
+            if (enchantableObject && enchantableObject.currentEnchant == EnchantType.up && enchantableObject.enchanted)
+            {
+                RetrieveEnchantment("W");
+            }
+        }
     }
 }

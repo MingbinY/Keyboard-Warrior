@@ -8,7 +8,6 @@ namespace KeyboardWarrior
     {
         Rigidbody2D rb;
         public float moveSpeed;
-        bool enchanted = false;
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -36,7 +35,9 @@ namespace KeyboardWarrior
         }
         public override void BaseEvent()
         {
+            Debug.Log("Player Base Event");
             currentEnchant = EnchantType.idle;
+            rb.gravityScale = 1;
             enchanted = false;
         }
         public override void SpaceEvent()

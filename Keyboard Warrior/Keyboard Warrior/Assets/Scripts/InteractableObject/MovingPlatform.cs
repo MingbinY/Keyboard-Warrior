@@ -15,28 +15,32 @@ namespace KeyboardWarrior
 
         public override void UpEvent()
         {
-            Debug.Log("UP");
+            base.UpEvent();
             currentEnchant = EnchantType.up;
         }
         public override void DownEvent()
         {
+            base.DownEvent();
             currentEnchant = EnchantType.down;
         }
         public override void LeftEvent()
         {
-            Debug.Log("Left");
+            base.LeftEvent();
             currentEnchant = EnchantType.left;
         }
         public override void RightEvent()
         {
+            base.RightEvent();
             currentEnchant = EnchantType.right;
         }
         public override void BaseEvent()
         {
+            base.BaseEvent();
             currentEnchant = EnchantType.idle;
         }
         public override void SpaceEvent()
         {
+            base.SpaceEvent();
             currentEnchant = EnchantType.space;
         }
 

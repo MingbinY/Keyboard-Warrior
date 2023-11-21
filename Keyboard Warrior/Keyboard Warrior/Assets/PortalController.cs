@@ -22,30 +22,37 @@ namespace KeyboardWarrior
 
         public override void UpEvent()
         {
+            base.UpEvent();
             currentEnchant = EnchantType.up;
         }
         public override void DownEvent()
         {
+            base .DownEvent();
             currentEnchant = EnchantType.down;
         }
         public override void LeftEvent()
         {
+            base.LeftEvent();
             currentEnchant = EnchantType.left;
         }
         public override void RightEvent()
         {
+            base.RightEvent();
             currentEnchant = EnchantType.right;
         }
         public override void BaseEvent()
         {
+            base.BaseEvent();
         }
         public override void SpaceEvent()
         {
+            base.SpaceEvent();
             currentEnchant = EnchantType.space;
             transform.localScale = Vector3.one * 2;
         }
         public override void RetrieveEvent()
         {
+            base.RetrieveEvent();
             currentEnchant = EnchantType.idle;
         }
 

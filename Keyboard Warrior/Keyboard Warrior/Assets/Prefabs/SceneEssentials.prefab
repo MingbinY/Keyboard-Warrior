@@ -1012,11 +1012,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 860620282308586660}
   - {fileID: 3562637375660270137}
   - {fileID: 1253337259459978514}
   - {fileID: 1181191491796209756}
   - {fileID: 7024600110838913099}
-  - {fileID: 860620282308586660}
   m_Father: {fileID: 4666987991852918810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5624042755094214485
@@ -1357,6 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEnchant: 4
+  enchanted: 0
   moveSpeed: 1
 --- !u!1 &2205388420890916389
 GameObject:

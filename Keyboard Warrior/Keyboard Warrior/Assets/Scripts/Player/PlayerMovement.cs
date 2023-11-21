@@ -28,11 +28,8 @@ namespace KeyboardWarrior
         private void Update()
         {
             isGrounded = GroundCheck();
-            //if (!isGrounded)
-            //{
-            //    //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y - rb.gravityScale);
-            //    rb.AddForce(-rb.transform.up * rb.gravityScale * Time.deltaTime);
-            //}
+            HandleMove(PlayerManager.Instance.inputManager.movementInput);
+            HandleJump(PlayerManager.Instance.inputManager.jumpInput);
         }
 
         #region Ground Check
@@ -53,12 +50,16 @@ namespace KeyboardWarrior
         #region Handle Movement
         public void HandleMove(Vector2 movementValue)
         {
+            if (PlayerManager.Instance.playerEnchantment.enchanted) return;
+            if (movementValue.x < 0 && !PlayerManager.Instance.playerKeyboardManager.canUseA) movementValue.x = 0;
+            if (movementValue.x > 0 && !PlayerManager.Instance.playerKeyboardManager.canUseD) movementValue.x = 0;
             rb.velocity = new Vector2(movementValue.x * moveSpeed, movementValue.y + rb.velocity.y);
             //rb.MovePosition(rb.position + movementValue * Time.deltaTime);
         }
 
-        public void HandleJump()
+        public void HandleJump(bool jumpInput)
         {
+            if (!jumpInput || !PlayerManager.Instance.playerKeyboardManager.canUseSpace) return;
             rb.velocity = GroundCheck() ? new Vector2(0, jumpVelocity) : rb.velocity;
         }
         #endregion

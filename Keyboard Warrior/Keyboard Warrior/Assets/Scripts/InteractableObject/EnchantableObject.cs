@@ -16,12 +16,13 @@ namespace KeyboardWarrior
     public class EnchantableObject : MonoBehaviour
     {
         public EnchantType currentEnchant = EnchantType.idle;
-        public virtual void UpEvent() {}
-        public virtual void DownEvent() { }
-        public virtual void LeftEvent() { }
-        public virtual void RightEvent() { }
-        public virtual void SpaceEvent() { }
-        public virtual void BaseEvent() { }
-        public virtual void RetrieveEvent() { }
+        public bool enchanted = false;
+        public virtual void UpEvent() { enchanted = true; }
+        public virtual void DownEvent() { enchanted = true; }
+        public virtual void LeftEvent() { enchanted = true; }
+        public virtual void RightEvent() { enchanted = true; }
+        public virtual void SpaceEvent() { enchanted = true; }
+        public virtual void BaseEvent() { enchanted = false; }
+        public virtual void RetrieveEvent() { enchanted = false; }
     }
 }
