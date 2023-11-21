@@ -17,6 +17,7 @@ namespace KeyboardWarrior
         }
         public override void TriggerEvent(GameObject other)
         {
+            Debug.Log("TriggerEvent" + " " + enchantType);
             switch (enchantType)
             {
                 case EnchantType.up:
