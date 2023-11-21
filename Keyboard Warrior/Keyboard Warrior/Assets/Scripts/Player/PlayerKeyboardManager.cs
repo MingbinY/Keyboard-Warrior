@@ -118,6 +118,8 @@ namespace KeyboardWarrior
                     PlayerManager.Instance.playerSkillManager.RetrieveObstacle(obstacle);
                 }
             }
+
+            PlayerManager.Instance.playerSkillManager.RetrieveAllEnchantment();
         }
     }
 }
