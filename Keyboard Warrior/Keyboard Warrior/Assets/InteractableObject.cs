@@ -42,6 +42,8 @@ namespace KeyboardWarrior
         private void Update()
         {
             eo.currentEnchant = currenttype;
+            Debug.Log(name + ' ' + currenttype + " IDLE OBJECT " + idleObject.activeSelf);
+            if (gameObject == PlayerManager.Instance.gameObject) return;
             idleObject.active = currenttype == EnchantType.idle ? true:false;
             upObject.active = currenttype == EnchantType.up ? true:false;
             downObject.active = currenttype == EnchantType.down ? true:false;
