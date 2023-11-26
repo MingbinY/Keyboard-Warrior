@@ -10,14 +10,31 @@ namespace KeyboardWarrior
         EnchantType defaultType;
         public float eventLastTime = 5f;
         public bool enchanted = false;
-
+        public float cooldown = 3f;
+        float cooldownTimer = 0f;
+        bool inCooldown = false;
+        SpriteRenderer sprite;
         private void Start()
         {
             defaultType = enchantType;
+            sprite = GetComponent<SpriteRenderer>();
+        }
+        private void Update()
+        {
+            if (inCooldown)
+            {
+                cooldownTimer += Time.deltaTime;
+                inCooldown = cooldownTimer >= cooldown ? false : true;
+            }
+            sprite.enabled = !inCooldown;
         }
         public override void TriggerEvent(GameObject other)
         {
             Debug.Log("TriggerEvent" + " " + enchantType);
+            if (inCooldown) { return; }
+            inCooldown = true;
+            cooldownTimer = 0;
+            other.transform.position = transform.position;
             switch (enchantType)
             {
                 case EnchantType.up:
