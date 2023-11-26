@@ -32,26 +32,12 @@ namespace KeyboardWarrior
         private void Update()
         {
             KeyUIColor();
-            pressedW = inputManager.retrieveInput;
-            if (pressedW )
-            {
-                retrieveTimer += Time.deltaTime;
-            }
-            else
-            {
-                retrieveTimer = 0;
-                activatedRetrieve = false;
-            }
-
-            if (retrieveTimer >= retrieveTime)
-            {
-                activatedRetrieve = true;
-                RetrieveKeys();
-            }
         }
 
         public void KeyUIColor()
         {
+            pressedW = inputManager.jumpInput;
+            
             pressedA = inputManager.movementInput.x == -1 ? true : false;
             pressedD = inputManager.movementInput.x == 1 ? true : false;
         }
@@ -73,53 +59,27 @@ namespace KeyboardWarrior
                 case "D":
                     canUseD = false;
                     break;
-                case "Space":
-                    canUseSpace = false;
-                    break;
             }
         }
 
-        public void UnuseKey(string keyName)
+        public void UnuseKey(EnchantType keyName)
         {
             switch (keyName)
             {
-                case "W":
+                case EnchantType.up:
                     canUseW = true;
                     break;
-                case "A":
+                case EnchantType.left:
                     canUseA = true;
                     break;
-                case "S":
+                case EnchantType.down:
                     canUseS = true;
                     break;
-                case "D":
+                case EnchantType.right:
                     canUseD = true;
-                    break;
-                case "Space":
-                    canUseSpace = true;
                     break;
             }
         }
         #endregion
-        private void RetrieveKeys()
-        {
-            string[] keys = { "W", "A", "S", "D", "Space" };
-            KeyboardObstacle[] obstacles = FindObjectsOfType<KeyboardObstacle>();
-
-            foreach (string key in keys)
-            {
-                PlayerManager.Instance.playerSkillManager.RetrieveEnchantment(key);
-            }
-
-            foreach (KeyboardObstacle obstacle in obstacles)
-            {
-                if (obstacle.gameObject.activeSelf)
-                {
-                    PlayerManager.Instance.playerSkillManager.RetrieveObstacle(obstacle);
-                }
-            }
-
-            PlayerManager.Instance.playerSkillManager.RetrieveAllEnchantment();
-        }
     }
 }

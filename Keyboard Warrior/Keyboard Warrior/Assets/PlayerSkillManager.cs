@@ -10,65 +10,27 @@ namespace KeyboardWarrior
         public GameObject aUI;
         public GameObject sUI;
         public GameObject dUI;
-        public GameObject spaceUI;
 
-        public void RetrieveObstacle(KeyboardObstacle obstacle)
+        PlayerKeyboardManager keyboardManager;
+
+        private void Start()
         {
-            obstacle.relatedKeyUI.SetActive(true);
-            obstacle.gameObject.SetActive(false);
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey(obstacle.obstacleName);
+            keyboardManager = PlayerManager.Instance.playerKeyboardManager;
         }
 
-        public void RetrieveEnchantment(string enchantName)
-        {
-            switch (enchantName)
-            {
-                case "W":
-                    wUI.SetActive(true);
-                    break;
-                case "A":
-                    aUI.SetActive(true);
-                    break;
-                case "S":
-                    sUI.SetActive(true);
-                    break;
-                case "D":
-                    dUI.SetActive(true);
-                    break;
-                case "Space":
-                    spaceUI.SetActive(true);
-                    break;
-            }
-            
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey(enchantName);
+        public float enchantLastTime = 5f;
+
+        public void RetrieveEnchantment(EnchantType enchantType)
+        {        
+            PlayerManager.Instance.playerKeyboardManager.UnuseKey(enchantType);
         }
 
-        public void RetrieveAllEnchantment()
+        private void Update()
         {
-            wUI.SetActive(true);
-            aUI.SetActive(true);
-            sUI.SetActive(true);
-            dUI.SetActive(true);
-            spaceUI.SetActive(true);
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey("W");
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey("A");
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey("S");
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey("D");
-            PlayerManager.Instance.playerKeyboardManager.UnuseKey("Space");
-            InteractableObject[] enchantableObjects = FindObjectsOfType<InteractableObject>();
-            foreach (InteractableObject obj in enchantableObjects)
-            {
-                if (obj != this.gameObject)
-                    obj.RetrieveEvent();
-            }
-        }
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            EnchantableObject enchantableObject = other.GetComponent<EnchantableObject>();
-            if (enchantableObject && enchantableObject.currentEnchant == EnchantType.up && enchantableObject.enchanted)
-            {
-                RetrieveEnchantment("W");
-            }
+            wUI.SetActive(keyboardManager.canUseW);
+            aUI.SetActive(keyboardManager.canUseA);
+            sUI.SetActive(keyboardManager.canUseS);
+            dUI.SetActive(keyboardManager.canUseD);
         }
     }
 }

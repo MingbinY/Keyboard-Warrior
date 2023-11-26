@@ -35,53 +35,11 @@ namespace KeyboardWarrior
             inCooldown = true;
             cooldownTimer = 0;
             other.transform.position = transform.position;
-            switch (enchantType)
+            InteractableObject io = other.GetComponent<InteractableObject>();
+            if (io)
             {
-                case EnchantType.up:
-                    other.GetComponent<InteractableObject>().upEvent.Invoke();
-                    if (enchanted)
-                    {
-                        PlayerManager.Instance.playerSkillManager.RetrieveEnchantment("W");
-                    }
-                 break;
-                case EnchantType.down:
-                    other.GetComponent<InteractableObject>().downEvent.Invoke();
-                    if (enchanted)
-                    {
-                        PlayerManager.Instance.playerSkillManager.RetrieveEnchantment("S");
-                    }
-                    break;
-                case EnchantType.left:
-                    other.GetComponent<InteractableObject>().leftEvent.Invoke();
-                    if (enchanted)
-                    {
-                        PlayerManager.Instance.playerSkillManager.RetrieveEnchantment("A");
-                    }
-                    break;
-                case EnchantType.right:
-                    other.GetComponent<InteractableObject>().rightEvent.Invoke();
-                    if (enchanted)
-                    {
-                        PlayerManager.Instance.playerSkillManager.RetrieveEnchantment("D");
-                    }
-                    break;
-                case EnchantType.space:
-                    other.GetComponent<InteractableObject>().spaceEvent.Invoke();
-                 break;
+                io.OnEnchant(enchantType);
             }
-
-            if (enchanted)
-            {
-                enchantType = defaultType;
-                enchanted = false;
-            }
-            StartCoroutine(EventSequence(other));
-        }
-
-        protected override IEnumerator EventSequence(GameObject other)
-        {
-            yield return new WaitForSeconds(eventLastTime);
-            other.GetComponent<InteractableObject>().baseEvent.Invoke();
         }
 
         public override void ChangeEnchantType(string newType)

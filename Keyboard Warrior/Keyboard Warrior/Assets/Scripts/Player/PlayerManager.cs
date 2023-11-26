@@ -8,7 +8,6 @@ namespace KeyboardWarrior
     [RequireComponent(typeof(InputManager))]
     [RequireComponent(typeof(PlayerAnimationManager))]
     [RequireComponent(typeof(PlayerMovement))]
-    [RequireComponent(typeof(PlayerEquipmentManager))]
     [RequireComponent(typeof(PlayerKeyboardManager))]
     [RequireComponent(typeof(PlayerLadderMovement))]
     #endregion
@@ -17,7 +16,6 @@ namespace KeyboardWarrior
         public InputManager inputManager;
         public PlayerAnimationManager playerAnimationManager;
         public PlayerMovement playerMovement;
-        public PlayerEquipmentManager playerEquipmentManager;
         public PlayerKeyboardManager playerKeyboardManager;
         public PlayerLadderMovement ladderMovement;
         public PlayerHealth playerHealth;
@@ -31,7 +29,6 @@ namespace KeyboardWarrior
             inputManager = GetComponent<InputManager>();
             playerAnimationManager = GetComponent<PlayerAnimationManager>();
             playerMovement = GetComponent<PlayerMovement>();
-            playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
             playerKeyboardManager = GetComponent<PlayerKeyboardManager>();
             ladderMovement = GetComponent<PlayerLadderMovement>();
             playerHealth = GetComponent<PlayerHealth>();

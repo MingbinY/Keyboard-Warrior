@@ -61830,29 +61830,8 @@ MonoBehaviour:
   downObject: {fileID: 1331523549}
   leftObject: {fileID: 1331523549}
   rightObject: {fileID: 1331523549}
-  spaceObject: {fileID: 1331523549}
-  upEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  downEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  leftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  rightEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  spaceEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  baseEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  retrieveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  enchantTime: 3
+  defaultType: 4
+  currenttype: 4
 --- !u!212 &1331523555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65422,29 +65401,8 @@ MonoBehaviour:
   downObject: {fileID: 1946718617}
   leftObject: {fileID: 1946718617}
   rightObject: {fileID: 1946718617}
-  spaceObject: {fileID: 1946718617}
-  upEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  downEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  leftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  rightEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  spaceEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  baseEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  retrieveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  enchantTime: 3
+  defaultType: 4
+  currenttype: 4
 --- !u!50 &1946718622
 Rigidbody2D:
   serializedVersion: 4
@@ -66247,6 +66205,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1222855989640850330, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: relatedKeyUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109949045204616325, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: playerSkillManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2346317866387280978, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_Size.x
       value: 0.5447049
@@ -66262,6 +66228,22 @@ PrefabInstance:
     - target: {fileID: 2346317866387280978, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_Offset.y
       value: 0.054510295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697699470613755353, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: enchantmentDirection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802467037950263866, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802467037950263866, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 4060899a-d52f-4783-81e1-403a2157666e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802467037950263866, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/Restart[/Keyboard/r]
       objectReference: {fileID: 0}
     - target: {fileID: 3497851186111566260, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_SizeDelta.x
@@ -66319,16 +66301,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4728897999398829530, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: spaceUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142060674019338344, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: enchantmentDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822863314153399318, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: enchantmentDirection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7195904209921935328, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_Name
       value: SceneEssentials
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 7774474149677472739, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
     m_RemovedGameObjects:
     - {fileID: 516726869626268067, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
     - {fileID: 264811691498227008, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
     - {fileID: 4103695241130499666, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
     - {fileID: 4508979499495824924, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+    - {fileID: 3539354526809633847, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}

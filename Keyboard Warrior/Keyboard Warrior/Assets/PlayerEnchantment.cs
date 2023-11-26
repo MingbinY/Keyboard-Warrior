@@ -37,12 +37,8 @@ namespace KeyboardWarrior
         {
             Debug.Log("Player Base Event");
             currentEnchant = EnchantType.idle;
+            ReteriveEnchantment();
             enchanted = false;
-        }
-        public override void SpaceEvent()
-        {
-            currentEnchant = EnchantType.space;
-            enchanted = true;
         }
 
         private void Update()
@@ -68,9 +64,6 @@ namespace KeyboardWarrior
                 case EnchantType.right:
                     velocity.x = 1;
                     velocity.y = 0;
-                    break;
-                case EnchantType.space:
-                    scale = Vector2.one * 2;
                     break;
                 default:
                     velocity = Vector2.zero;
