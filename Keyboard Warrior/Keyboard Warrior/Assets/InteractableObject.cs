@@ -17,7 +17,7 @@ namespace KeyboardWarrior
         public EnchantType defaultType = EnchantType.idle;
         public EnchantType currenttype = EnchantType.idle;
 
-        EnchantableObject eo;
+        public EnchantableObject eo;
         private void Start()
         {
             currenttype = defaultType;
