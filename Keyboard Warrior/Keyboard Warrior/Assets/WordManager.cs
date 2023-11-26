@@ -10,9 +10,10 @@ namespace KeyboardWarrior
 
         public bool CheckString(string str, List<GameObject> objs)
         {
-            for (int i = 1; i <= words.Count; i++)
+            for (int i = 1; i <= str.Length; i++)
             {
                 string newS = str.Substring(0, i);
+                Debug.Log(newS);
                 if (words.Contains(newS))
                 {
                     words.Remove(newS);
