@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4709091a516b0a741932720697874cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  letter: A
 --- !u!212 &35719157
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -633,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4709091a516b0a741932720697874cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  letter: O
 --- !u!1 &821327752
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4709091a516b0a741932720697874cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  letter: Y
 --- !u!1 &1873310218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4709091a516b0a741932720697874cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  letter: B
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

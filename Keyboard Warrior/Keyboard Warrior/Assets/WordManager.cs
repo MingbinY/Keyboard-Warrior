@@ -17,15 +17,21 @@ namespace KeyboardWarrior
                 if (words.Contains(newS))
                 {
                     words.Remove(newS);
-                    for (int j = 0; j < i; j++)
-                    {
-                        Destroy(objs[j]);
-                    }
+                    StartCoroutine(DestroyWord(objs, i));
                     return true;
                 }
             }
 
             return false;
+        }
+
+        IEnumerator DestroyWord(List<GameObject> objs, int i)
+        {
+            yield return new WaitForSeconds(1f);
+            for (int j = 0; j < i; j++)
+            {
+                Destroy(objs[j]);
+            }
         }
     }
 }
