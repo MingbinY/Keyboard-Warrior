@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -40,23 +41,12 @@ namespace KeyboardWarrior
 
         private void Update()
         {
-            switch (currenttype)
-            {
-                case EnchantType.idle:
-                    break;
-                case EnchantType.up:
-                    eo.UpEvent();
-                    break;
-                case EnchantType.down:
-                    eo.DownEvent();
-                    break;
-                case EnchantType.left:
-                    eo.LeftEvent();
-                    break;
-                case EnchantType.right:
-                    eo.RightEvent();
-                    break;
-            }
+            eo.currentEnchant = currenttype;
+            idleObject.active = currenttype == EnchantType.idle ? true:false;
+            upObject.active = currenttype == EnchantType.up ? true:false;
+            downObject.active = currenttype == EnchantType.down ? true:false;
+            leftObject.active = currenttype == EnchantType.left ? true:false;
+            rightObject.active = currenttype == EnchantType.right ? true:false;
         }
     }
 }
