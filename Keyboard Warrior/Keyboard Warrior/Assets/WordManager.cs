@@ -7,6 +7,7 @@ namespace KeyboardWarrior
     public class WordManager : MonoBehaviour
     {
         public List<string> words = new List<string>();
+        public float destroyDelay = 1.0f;
 
         public bool CheckString(string str, List<GameObject> objs)
         {
@@ -27,7 +28,7 @@ namespace KeyboardWarrior
 
         IEnumerator DestroyWord(List<GameObject> objs, int i)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(destroyDelay);
             for (int j = 0; j < i; j++)
             {
                 Destroy(objs[j]);
