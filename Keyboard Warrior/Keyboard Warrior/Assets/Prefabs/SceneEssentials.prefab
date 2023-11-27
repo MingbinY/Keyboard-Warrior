@@ -505,6 +505,7 @@ MonoBehaviour:
     m_Bits: 64
   jumpVelocity: 5
   moveSpeed: 2
+  movementVector: {x: 0, y: 0}
 --- !u!114 &4676059891265398727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +599,7 @@ MonoBehaviour:
   aUI: {fileID: 6274298129083377444}
   sUI: {fileID: 6396019207447244366}
   dUI: {fileID: 4264282463203081131}
-  enchantLastTime: 5
+  enchantLastTime: 2
 --- !u!114 &3737736128490624579
 MonoBehaviour:
   m_ObjectHideFlags: 0
