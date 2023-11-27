@@ -24,6 +24,7 @@ namespace KeyboardWarrior
                 case EnchantType.down: DownEvent(); break;
                 case EnchantType.left:LeftEvent(); break;
                 case EnchantType.right:RightEvent(); break;
+                default: BaseEvent(); break;
             }
         }
         public virtual void UpEvent() { enchanted = true; }
