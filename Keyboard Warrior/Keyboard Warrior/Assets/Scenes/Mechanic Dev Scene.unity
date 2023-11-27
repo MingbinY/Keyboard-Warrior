@@ -805,10 +805,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnchantTrigger 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3489967394141717301, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
-      propertyPath: downObject
-      value: 
-      objectReference: {fileID: 1174442020}
     - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.85
@@ -1009,11 +1005,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1174442020 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5527846028324373157, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
-  m_PrefabInstance: {fileID: 759794214}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420357835
 GameObject:
   m_ObjectHideFlags: 0
