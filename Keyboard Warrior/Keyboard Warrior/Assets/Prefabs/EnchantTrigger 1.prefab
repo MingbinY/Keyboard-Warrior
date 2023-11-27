@@ -353,12 +353,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleObject: {fileID: 5200389217746957533}
   upObject: {fileID: 3466212300848744813}
-  downObject: {fileID: 1985489332898891126}
+  downObject: {fileID: 5527846028324373157}
   leftObject: {fileID: 1773945305872399067}
   rightObject: {fileID: 1985489332898891126}
   defaultType: 0
   currenttype: 4
   eo: {fileID: 0}
+  singleGO: 0
 --- !u!114 &334334423475291434
 MonoBehaviour:
   m_ObjectHideFlags: 0

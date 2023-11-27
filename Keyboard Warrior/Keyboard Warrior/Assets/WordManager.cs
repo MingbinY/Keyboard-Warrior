@@ -14,6 +14,7 @@ namespace KeyboardWarrior
         }
 
         AudioSource audioSource;
+        AudioClip currentClip;
         public List<WordAndSound> words = new List<WordAndSound>();
         public float destroyDelay = 1.0f;
 
@@ -26,7 +27,7 @@ namespace KeyboardWarrior
         {
             for (int i = 1; i <= str.Length; i++)
             {
-                string newS = str.Substring(0, i);
+                string newS = str[..i];
                 Debug.Log(newS);
                 foreach (WordAndSound ws in words)
                 {
@@ -34,7 +35,8 @@ namespace KeyboardWarrior
                     {
                         if (ws.audio)
                         {
-                            audioSource.PlayOneShot(ws.audio);
+                            currentClip = ws.audio;
+                            audioSource.PlayOneShot(currentClip);
                         }
                         words.Remove(ws);
                         StartCoroutine(DestroyWord(objs, i));
