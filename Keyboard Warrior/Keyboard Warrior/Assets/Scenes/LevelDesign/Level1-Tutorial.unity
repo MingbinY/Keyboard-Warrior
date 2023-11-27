@@ -65969,10 +65969,6 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[4].m_ActionName
       value: Player/Restart[/Keyboard/r]
       objectReference: {fileID: 0}
-    - target: {fileID: 3737736128490624579, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
-      propertyPath: singleGO
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4386722936876696122, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.82
