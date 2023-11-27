@@ -46,7 +46,7 @@ namespace KeyboardWarrior
                     Debug.Log(hit.collider.gameObject);
                     if (hit.collider.gameObject == PlayerManager.Instance.gameObject)
                     {
-                        dragState = DragState.InteractableObject;
+                        return;
                     }
                     else if (hit.collider.GetComponent<InteractableObject>() != null)
                     {
@@ -54,13 +54,13 @@ namespace KeyboardWarrior
                     }
                     else
                     {
-                        dragState = DragState.Environment;
+                        return;
                     }
                 }
                 else
                 {
                     rayHitObject = null;
-                    dragState = DragState.Environment;
+                    return;
                 }
             }
             if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), name)))
