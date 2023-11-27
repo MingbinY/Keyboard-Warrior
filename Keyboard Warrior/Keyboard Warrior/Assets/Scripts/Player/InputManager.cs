@@ -5,8 +5,6 @@ namespace KeyboardWarrior
 {
     public class InputManager : MonoBehaviour
     {
-        PlayerMovement playerMovement;
-        private PlayerInput playerInput;
         private PlayerInputActions inputActions;
         private PlayerKeyboardManager keyboardManager;
         private PlayerLadderMovement ladderMovement;
@@ -14,7 +12,6 @@ namespace KeyboardWarrior
         public Vector2 movementInput;
         public Vector2 climbInput;
         public bool jumpInput;
-        public bool retrieveInput;
 
         private void OnEnable()
         {
@@ -26,19 +23,15 @@ namespace KeyboardWarrior
 
         private void Awake()
         {
-            playerInput = GetComponent<PlayerInput>();
             inputActions = new PlayerInputActions();
             inputActions.Player.Enable();
             inputActions.Player.Jump.performed += i => jumpInput = true;
             inputActions.Player.Jump.canceled += i => jumpInput = false;
-            inputActions.Player.Retrieve.started += i => retrieveInput = true;
-            inputActions.Player.Retrieve.canceled += i => retrieveInput = false;
             inputActions.Player.Restart.performed += RespawnInput;
         }
 
         private void Start()
         {
-            playerMovement = PlayerManager.Instance.playerMovement;
             keyboardManager = PlayerManager.Instance.playerKeyboardManager;
             ladderMovement = PlayerManager.Instance.ladderMovement;
         }

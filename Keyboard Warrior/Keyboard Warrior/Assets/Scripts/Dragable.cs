@@ -15,7 +15,7 @@ namespace KeyboardWarrior
     {
         public Color hoverColor;
         public Color pressColor;
-        public string enchantmentDirection;
+        public EnchantType enchantmentDirection;
         Color defaultColor = Color.white;
         Vector3 startPos;
         Image image;
@@ -46,7 +46,7 @@ namespace KeyboardWarrior
                     Debug.Log(hit.collider.gameObject);
                     if (hit.collider.gameObject == PlayerManager.Instance.gameObject)
                     {
-                        dragState = DragState.Player;
+                        dragState = DragState.InteractableObject;
                     }
                     else if (hit.collider.GetComponent<InteractableObject>() != null)
                     {
@@ -96,20 +96,11 @@ namespace KeyboardWarrior
             switch (dragState)
             {
                 case DragState.Environment:
-                    //Create new obstacle
-                    if (obstaclePrefab != null)
-                    {
-                        obstaclePrefab.SetActive(true);
-                        obstaclePrefab.transform.position = new Vector3(GetWorldPos().x, GetWorldPos().y, 0);
-                    }
-                    break;
-                case DragState.Player:
-                    //Player Skill
-                    playerObj.GetComponent<InteractableObject>().OnInteract(enchantmentDirection);
-                    break;
+                    transform.position = startPos;
+                    return;
                 case DragState.InteractableObject:
                     // Interactable Object state change
-                    rayHitObject.GetComponent<InteractableObject>().OnInteract(enchantmentDirection);
+                    rayHitObject.GetComponent<InteractableObject>().OnEnchant(enchantmentDirection);
                     break;
             }
             //if (Mathf.Abs(currentPos.x - playerObj.transform.position.x) < 0.5f && Mathf.Abs(currentPos.y - playerObj.transform.position.y) < 0.5f)

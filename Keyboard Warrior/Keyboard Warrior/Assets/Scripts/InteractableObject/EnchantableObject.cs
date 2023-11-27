@@ -24,5 +24,10 @@ namespace KeyboardWarrior
         public virtual void SpaceEvent() { enchanted = true; }
         public virtual void BaseEvent() { enchanted = false; }
         public virtual void RetrieveEvent() { enchanted = false; }
+
+        public void ReteriveEnchantment()
+        {
+            PlayerManager.Instance.playerSkillManager.RetrieveEnchantment(currentEnchant);
+        }
     }
 }
