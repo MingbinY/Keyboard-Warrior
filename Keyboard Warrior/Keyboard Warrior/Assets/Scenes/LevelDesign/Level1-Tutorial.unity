@@ -65958,10 +65958,6 @@ PrefabInstance:
       propertyPath: spaceUI
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4728897999398829530, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
-      propertyPath: enchantLastTime
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6142060674019338344, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: enchantmentDirection
       value: 1
