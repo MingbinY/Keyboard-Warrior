@@ -6,8 +6,21 @@ namespace KeyboardWarrior
 {
     public class WordManager : MonoBehaviour
     {
-        public List<string> words = new List<string>();
+        [System.Serializable]
+        public struct WordAndSound
+        {
+            public string word;
+            public AudioClip audio;
+        }
+
+        AudioSource audioSource;
+        public List<WordAndSound> words = new List<WordAndSound>();
         public float destroyDelay = 1.0f;
+
+        private void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         public bool CheckString(string str, List<GameObject> objs)
         {
@@ -15,11 +28,18 @@ namespace KeyboardWarrior
             {
                 string newS = str.Substring(0, i);
                 Debug.Log(newS);
-                if (words.Contains(newS))
+                foreach (WordAndSound ws in words)
                 {
-                    words.Remove(newS);
-                    StartCoroutine(DestroyWord(objs, i));
-                    return true;
+                    if (ws.word == newS)
+                    {
+                        if (ws.audio)
+                        {
+                            audioSource.PlayOneShot(ws.audio);
+                        }
+                        words.Remove(ws);
+                        StartCoroutine(DestroyWord(objs, i));
+                        return true;
+                    }
                 }
             }
 
