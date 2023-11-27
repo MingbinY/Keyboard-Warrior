@@ -29,7 +29,7 @@ namespace KeyboardWarrior
         {
             CheckFaceRight();
             sprite.flipX = faceLeft;
-            animator.SetFloat("xSpeed", Mathf.Abs(playerInput.movementInput.x));
+            animator.SetFloat("xSpeed", Mathf.Abs(playerMovement.movementVector.x));
             animator.SetBool("isGrounded", playerMovement.isGrounded);
         }
 

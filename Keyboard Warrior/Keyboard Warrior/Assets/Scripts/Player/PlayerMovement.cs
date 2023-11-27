@@ -19,7 +19,7 @@ namespace KeyboardWarrior
 
         [Header("Movement Modifier")]
         public float moveSpeed;
-
+        public Vector2 movementVector;
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -53,13 +53,14 @@ namespace KeyboardWarrior
             if (PlayerManager.Instance.playerEnchantment.enchanted) return;
             if (movementValue.x < 0 && !PlayerManager.Instance.playerKeyboardManager.canUseA) movementValue.x = 0;
             if (movementValue.x > 0 && !PlayerManager.Instance.playerKeyboardManager.canUseD) movementValue.x = 0;
+            movementVector = movementValue;
             rb.velocity = new Vector2(movementValue.x * moveSpeed, movementValue.y + rb.velocity.y);
             //rb.MovePosition(rb.position + movementValue * Time.deltaTime);
         }
 
         public void HandleJump(bool jumpInput)
         {
-            if (!jumpInput || !PlayerManager.Instance.playerKeyboardManager.canUseSpace) return;
+            if (!jumpInput || !PlayerManager.Instance.playerKeyboardManager.canUseW) return;
             rb.velocity = GroundCheck() ? new Vector2(0, jumpVelocity) : rb.velocity;
         }
         #endregion

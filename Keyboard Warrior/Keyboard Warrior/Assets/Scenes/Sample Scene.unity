@@ -59489,101 +59489,10 @@ MonoBehaviour:
   downObject: {fileID: 76259204}
   leftObject: {fileID: 76259204}
   rightObject: {fileID: 76259204}
-  spaceObject: {fileID: 76259204}
-  upEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 769573602}
-        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
-        m_MethodName: UpEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  downEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 769573602}
-        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
-        m_MethodName: DownEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  leftEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 769573602}
-        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
-        m_MethodName: LeftEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  rightEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 769573602}
-        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
-        m_MethodName: RightEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  spaceEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 769573602}
-        m_TargetAssemblyTypeName: KeyboardWarrior.EnchantableObject, Assembly-CSharp
-        m_MethodName: SpaceEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  baseEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 769573602}
-        m_TargetAssemblyTypeName: KeyboardWarrior.MovingPlatform, Assembly-CSharp
-        m_MethodName: BaseEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  retrieveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  enchantTime: 2
+  defaultType: 4
+  currenttype: 4
+  eo: {fileID: 0}
+  singleGO: 0
 --- !u!4 &769573599
 Transform:
   m_ObjectHideFlags: 0
@@ -59685,6 +59594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEnchant: 4
+  enchanted: 0
   moveSpeed: 1
 --- !u!1 &815471231
 GameObject:
@@ -59827,6 +59737,79 @@ Transform:
   - {fileID: 84868933}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1158459359
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2301264515651302678, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_Name
+      value: EnchantTrigger 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191169739172385859, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16dffbef825f2a0428b601adc7dfea75, type: 3}
 --- !u!1 &1211989814
 GameObject:
   m_ObjectHideFlags: 0
@@ -61275,3 +61258,4 @@ SceneRoots:
   - {fileID: 1211989816}
   - {fileID: 769573599}
   - {fileID: 1840317263}
+  - {fileID: 1158459359}

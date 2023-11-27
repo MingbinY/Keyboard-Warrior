@@ -619,6 +619,7 @@ MonoBehaviour:
   defaultType: 4
   currenttype: 4
   eo: {fileID: 0}
+  singleGO: 1
 --- !u!114 &6407553262689764180
 MonoBehaviour:
   m_ObjectHideFlags: 0
