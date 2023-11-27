@@ -14,6 +14,7 @@ namespace KeyboardWarrior
         public override void BaseEvent()
         {
             base.BaseEvent();
+            et.enchantType = et.defaultType;
             ReteriveEnchantment();
         }
 

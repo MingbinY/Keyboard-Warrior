@@ -7,7 +7,7 @@ namespace KeyboardWarrior
     public class EnchantTrigger : TriggerEventType
     {
         public EnchantType enchantType = EnchantType.idle;
-        EnchantType defaultType;
+        public EnchantType defaultType;
         public float eventLastTime = 5f;
         public bool enchanted = false;
         public float cooldown = 3f;
@@ -16,7 +16,7 @@ namespace KeyboardWarrior
         SpriteRenderer sprite;
         private void Start()
         {
-            defaultType = enchantType;
+            enchantType = defaultType;
             sprite = GetComponent<SpriteRenderer>();
         }
         private void Update()
