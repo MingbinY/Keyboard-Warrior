@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1151324433727444265}
   - component: {fileID: 9146251308403824918}
   - component: {fileID: 8818170143660788094}
+  - component: {fileID: 3528320814217094483}
   m_Layer: 0
   m_Name: EnchantTrigger
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5615424421811602322}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.38, y: -0.28999996, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
@@ -103,7 +104,7 @@ MonoBehaviour:
   triggerEvent:
     m_PersistentCalls:
       m_Calls: []
-  destroyAfterTrigger: 1
+  destroyAfterTrigger: 0
 --- !u!61 &1151324433727444265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,9 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e511ca1e1583c784aa47e9a47411602d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enchantType: 0
-  eventLastTime: 3
+  enchantType: 3
+  eventLastTime: 4
   enchanted: 0
+  cooldown: 1
 --- !u!114 &8818170143660788094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,86 +183,20 @@ MonoBehaviour:
   downObject: {fileID: 5615424421811602322}
   leftObject: {fileID: 5615424421811602322}
   rightObject: {fileID: 5615424421811602322}
-  spaceObject: {fileID: 5615424421811602322}
-  upEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9146251308403824918}
-        m_TargetAssemblyTypeName: KeyboardWarrior.EnchantTrigger, Assembly-CSharp
-        m_MethodName: ChangeEnchantType
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: W
-          m_BoolArgument: 0
-        m_CallState: 2
-  downEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9146251308403824918}
-        m_TargetAssemblyTypeName: KeyboardWarrior.EnchantTrigger, Assembly-CSharp
-        m_MethodName: ChangeEnchantType
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: S
-          m_BoolArgument: 0
-        m_CallState: 2
-  leftEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9146251308403824918}
-        m_TargetAssemblyTypeName: KeyboardWarrior.EnchantTrigger, Assembly-CSharp
-        m_MethodName: ChangeEnchantType
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: A
-          m_BoolArgument: 0
-        m_CallState: 2
-  rightEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9146251308403824918}
-        m_TargetAssemblyTypeName: KeyboardWarrior.EnchantTrigger, Assembly-CSharp
-        m_MethodName: ChangeEnchantType
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: D
-          m_BoolArgument: 0
-        m_CallState: 2
-  spaceEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9146251308403824918}
-        m_TargetAssemblyTypeName: KeyboardWarrior.EnchantTrigger, Assembly-CSharp
-        m_MethodName: ChangeEnchantType
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Space
-          m_BoolArgument: 0
-        m_CallState: 2
-  baseEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  retrieveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  enchantTime: 5
+  defaultType: 4
+  currenttype: 4
+  eo: {fileID: 0}
+--- !u!114 &3528320814217094483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5615424421811602322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efe3f5ef3e69934ead07a5338653455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentEnchant: 4
+  enchanted: 0

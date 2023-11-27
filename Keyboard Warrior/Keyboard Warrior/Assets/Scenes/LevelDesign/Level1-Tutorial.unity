@@ -61616,22 +61616,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7110401660175687358, guid: bc9a883ef13b1ce4d96ccf2fcbfd3406, type: 3}
-      propertyPath: destroyAfterTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9146251308403824918, guid: bc9a883ef13b1ce4d96ccf2fcbfd3406, type: 3}
-      propertyPath: cooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9146251308403824918, guid: bc9a883ef13b1ce4d96ccf2fcbfd3406, type: 3}
-      propertyPath: enchantType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9146251308403824918, guid: bc9a883ef13b1ce4d96ccf2fcbfd3406, type: 3}
-      propertyPath: eventLastTime
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

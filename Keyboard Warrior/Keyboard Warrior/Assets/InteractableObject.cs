@@ -27,6 +27,10 @@ namespace KeyboardWarrior
         public void OnEnchant(EnchantType enchantType)
         {
             Debug.Log("New Type: " + enchantType);
+            if (eo.enchanted)
+            {
+                eo.ReteriveEnchantment();
+            }
             currenttype = enchantType;
             StartCoroutine(AutoReterieve());
         }
