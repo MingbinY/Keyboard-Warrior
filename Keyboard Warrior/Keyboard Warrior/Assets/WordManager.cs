@@ -33,6 +33,7 @@ namespace KeyboardWarrior
                 {
                     if (ws.word == newS)
                     {
+                        BroadcastMessage("WordMatched");
                         if (ws.audio)
                         {
                             currentClip = ws.audio;

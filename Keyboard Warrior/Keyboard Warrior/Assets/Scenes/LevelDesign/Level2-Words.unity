@@ -61121,6 +61121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997163595}
   - component: {fileID: 1997163594}
+  - component: {fileID: 1997163596}
   m_Layer: 0
   m_Name: cannonstop
   m_TagString: Untagged
@@ -61195,6 +61196,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997163596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997163593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e595b0f42b49d04eb600adec9f40f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  letterPrefab: {fileID: 2473481039645581331, guid: 64a0c4269c5bc974d91821b594b9a893, type: 3}
+  letters:
+  - 
+  - 
+  - 
+  - 
+  - 
+  letterIndex: 0
+  levelEnd: 0
+  generateInterval: 3
 --- !u!1001 &2022480136
 PrefabInstance:
   m_ObjectHideFlags: 0
