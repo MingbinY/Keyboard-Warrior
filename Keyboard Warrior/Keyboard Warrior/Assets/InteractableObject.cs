@@ -33,6 +33,7 @@ namespace KeyboardWarrior
                 eo.ReteriveEnchantment();
             }
             currenttype = enchantType;
+            eo.OnEnchant(enchantType);
             StartCoroutine(AutoReterieve());
         }
 

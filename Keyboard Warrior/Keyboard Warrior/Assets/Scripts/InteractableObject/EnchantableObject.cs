@@ -17,6 +17,15 @@ namespace KeyboardWarrior
     {
         public EnchantType currentEnchant = EnchantType.idle;
         public bool enchanted = false;
+        public virtual void OnEnchant(EnchantType enchantType)
+        {
+            switch (enchantType){
+                case EnchantType.up:UpEvent();break;
+                case EnchantType.down: DownEvent(); break;
+                case EnchantType.left:LeftEvent(); break;
+                case EnchantType.right:RightEvent(); break;
+            }
+        }
         public virtual void UpEvent() { enchanted = true; }
         public virtual void DownEvent() { enchanted = true; }
         public virtual void LeftEvent() { enchanted = true; }
