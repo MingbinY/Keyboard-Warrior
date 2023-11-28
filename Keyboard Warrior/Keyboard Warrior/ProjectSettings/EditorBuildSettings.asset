@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StarWarText.unity
+    path: Assets/Scenes/LevelDesign/StartScreen.unity
+    guid: 247286e00c5429c4f98f175ab92fd954
+  - enabled: 1
+    path: Assets/Scenes/LevelDesign/StarWarText.unity
     guid: 2e3beb4faf56f0e4ebecd983f93856c9
   - enabled: 1
-    path: Assets/Scenes/Sample Scene.unity
-    guid: 71619b9726d15c240b189b089fdb0a39
+    path: Assets/Scenes/LevelDesign/Level1-Tutorial.unity
+    guid: beced025ef2039e4c8f48623450b1227
+  - enabled: 1
+    path: Assets/Scenes/LevelDesign/Level2-Words.unity
+    guid: e67af89ea4fc6ec49b5731c1d8c2e2e9
   m_configObjects: {}
