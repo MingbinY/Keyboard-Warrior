@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 3489967394141717301}
   - component: {fileID: 334334423475291434}
   m_Layer: 0
-  m_Name: EnchantTrigger 1
+  m_Name: EnchantTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enchantType: 0
+  defaultType: 0
   eventLastTime: 3
   enchanted: 0
   cooldown: 1
