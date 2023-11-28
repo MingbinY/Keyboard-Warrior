@@ -43,7 +43,6 @@ namespace KeyboardWarrior
                 if (hit.collider != null)
                 {
                     rayHitObject = hit.collider.gameObject;
-                    Debug.Log(hit.collider.gameObject);
                     if (hit.collider.gameObject == PlayerManager.Instance.gameObject)
                     {
                         dragState = DragState.Environment;

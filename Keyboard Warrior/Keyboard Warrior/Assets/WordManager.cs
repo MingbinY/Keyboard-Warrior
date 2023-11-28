@@ -28,7 +28,6 @@ namespace KeyboardWarrior
             for (int i = 1; i <= str.Length; i++)
             {
                 string newS = str[..i];
-                Debug.Log(newS);
                 foreach (WordAndSound ws in words)
                 {
                     ws.word.ToUpper();
