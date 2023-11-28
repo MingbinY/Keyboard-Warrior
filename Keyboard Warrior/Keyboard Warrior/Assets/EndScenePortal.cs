@@ -10,8 +10,9 @@ namespace KeyboardWarrior
         public UnityEvent onTriggerEvent;
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other == PlayerManager.Instance.gameObject)
+            if (other.gameObject == PlayerManager.Instance.gameObject)
             {
+
                 onTriggerEvent.Invoke();
             }
         }
