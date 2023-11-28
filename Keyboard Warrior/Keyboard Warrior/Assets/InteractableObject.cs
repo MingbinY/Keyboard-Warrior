@@ -19,6 +19,7 @@ namespace KeyboardWarrior
 
         public EnchantableObject eo;
         public bool singleGO = false;
+        public bool returnToDefault = true;
         private void Start()
         {
             currenttype = defaultType;
@@ -42,7 +43,7 @@ namespace KeyboardWarrior
             yield return new WaitForSeconds(PlayerManager.Instance.playerSkillManager.enchantLastTime);
             PlayerManager.Instance.playerSkillManager.RetrieveEnchantment(currenttype);
             eo.BaseEvent();
-            currenttype = defaultType;
+            if (returnToDefault) currenttype = defaultType;
         }
 
         private void Update()

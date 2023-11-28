@@ -116,8 +116,8 @@ GameObject:
   - component: {fileID: 4474795315445428176}
   - component: {fileID: 5548758346605819352}
   - component: {fileID: 2473481039645581331}
-  - component: {fileID: 4812849624752210447}
   - component: {fileID: 5645298827524717887}
+  - component: {fileID: 639830264706245655}
   m_Layer: 0
   m_Name: LetterPrefab
   m_TagString: Untagged
@@ -278,21 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letter: Y
---- !u!114 &4812849624752210447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590605897822982720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e69363e575980e4fa3ce9313c83c009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentEnchant: 2
-  enchanted: 0
-  moveSpeed: 3
 --- !u!114 &5645298827524717887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +299,22 @@ MonoBehaviour:
   currenttype: 4
   eo: {fileID: 0}
   singleGO: 1
+  returnToDefault: 0
+--- !u!114 &639830264706245655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590605897822982720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aca430bac061bb4fb88ce6d2060addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentEnchant: 2
+  enchanted: 0
+  moveSpeed: 3
 --- !u!1 &7136392289456043257
 GameObject:
   m_ObjectHideFlags: 0
