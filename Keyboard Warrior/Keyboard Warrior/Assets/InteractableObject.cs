@@ -20,27 +20,27 @@ namespace KeyboardWarrior
         public EnchantableObject eo;
         public bool singleGO = false;
         public bool returnToDefault = true;
+        public float enchantTimer = 0;
         private void Start()
         {
             currenttype = defaultType;
             eo = GetComponent<EnchantableObject>();
+            enchantTimer = 0;
         }
 
         public void OnEnchant(EnchantType enchantType)
         {
-            Debug.Log("New Type: " + enchantType);
+            enchantTimer = 0;
             if (eo.enchanted)
             {
                 eo.ReteriveEnchantment();
             }
             currenttype = enchantType;
             eo.OnEnchant(enchantType);
-            StartCoroutine(AutoReterieve());
         }
 
-        IEnumerator AutoReterieve()
+        void AutoReterieve()
         {
-            yield return new WaitForSeconds(PlayerManager.Instance.playerSkillManager.enchantLastTime);
             PlayerManager.Instance.playerSkillManager.RetrieveEnchantment(currenttype);
             eo.BaseEvent();
             if (returnToDefault) currenttype = defaultType;
@@ -48,6 +48,17 @@ namespace KeyboardWarrior
 
         private void Update()
         {
+            if (eo.enchanted)
+            {
+                if (enchantTimer < PlayerManager.Instance.playerSkillManager.enchantLastTime)
+                {
+                    enchantTimer += Time.deltaTime;
+                }
+                else
+                {
+                    AutoReterieve();
+                }    
+            }
             eo.currentEnchant = currenttype;
             if (singleGO) return;
             idleObject.active = currenttype == EnchantType.idle ? true:false;

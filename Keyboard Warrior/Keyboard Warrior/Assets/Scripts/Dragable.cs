@@ -42,6 +42,7 @@ namespace KeyboardWarrior
                 RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, ~raycastIgnoreLayers);
                 if (hit.collider != null)
                 {
+                    Debug.Log(hit.collider.gameObject.name);
                     rayHitObject = hit.collider.gameObject;
                     if (hit.collider.gameObject == PlayerManager.Instance.gameObject)
                     {

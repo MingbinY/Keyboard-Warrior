@@ -18,7 +18,7 @@ namespace KeyboardWarrior
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //GameSceneManager.Instance.LoadNextScene();
+                GameSceneManager.Instance.LoadNextScene();
             }
         }
 
