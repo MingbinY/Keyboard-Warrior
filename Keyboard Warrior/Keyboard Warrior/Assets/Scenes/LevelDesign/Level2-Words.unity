@@ -60964,7 +60964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017193213350139461, guid: 2749e6735bad7af40adb9e20b22266bb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6017193213350139482, guid: 2749e6735bad7af40adb9e20b22266bb, type: 3}
       propertyPath: m_LocalScale.x
@@ -61476,7 +61476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017193213350139461, guid: 2749e6735bad7af40adb9e20b22266bb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6017193213350139482, guid: 2749e6735bad7af40adb9e20b22266bb, type: 3}
       propertyPath: m_LocalScale.x
@@ -61738,6 +61738,7 @@ GameObject:
   - component: {fileID: 1997163595}
   - component: {fileID: 1997163594}
   - component: {fileID: 1997163596}
+  - component: {fileID: 1997163597}
   m_Layer: 0
   m_Name: cannonstop
   m_TagString: Untagged
@@ -61837,6 +61838,32 @@ MonoBehaviour:
   letterIndex: 0
   levelEnd: 0
   generateInterval: 3
+--- !u!114 &1997163597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997163593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e968648c9ddc9499430cff32c7c0ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  words:
+  - word: NEVER
+    audio: {fileID: 0}
+  - word: GONNA
+    audio: {fileID: 0}
+  - word: GIVE
+    audio: {fileID: 0}
+  - word: YOU
+    audio: {fileID: 0}
+  - word: UP
+    audio: {fileID: 0}
+  - word: BOY
+    audio: {fileID: 0}
+  destroyDelay: 1
 --- !u!1001 &1999896143
 PrefabInstance:
   m_ObjectHideFlags: 0
