@@ -31,6 +31,7 @@ namespace KeyboardWarrior
                 Debug.Log(newS);
                 foreach (WordAndSound ws in words)
                 {
+                    ws.word.ToUpper();
                     if (ws.word == newS)
                     {
                         BroadcastMessage("WordMatched");

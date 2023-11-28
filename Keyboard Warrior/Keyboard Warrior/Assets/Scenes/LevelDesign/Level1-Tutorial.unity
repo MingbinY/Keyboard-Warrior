@@ -65862,6 +65862,10 @@ PrefabInstance:
       propertyPath: relatedKeyUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1537675858532201670, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2109949045204616325, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: playerSkillManager
       value: 
@@ -65885,6 +65889,10 @@ PrefabInstance:
     - target: {fileID: 2697699470613755353, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: enchantmentDirection
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697699470613755353, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 352
       objectReference: {fileID: 0}
     - target: {fileID: 2802467037950263866, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_ActionEvents.Array.size
@@ -65958,13 +65966,29 @@ PrefabInstance:
       propertyPath: spaceUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5558112734413830054, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 352
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624042755094214485, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 6142060674019338344, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: enchantmentDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6142060674019338344, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 352
+      objectReference: {fileID: 0}
     - target: {fileID: 6822863314153399318, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: enchantmentDirection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822863314153399318, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
+      propertyPath: raycastIgnoreLayers.m_Bits
+      value: 352
       objectReference: {fileID: 0}
     - target: {fileID: 7195904209921935328, guid: 2c6df76a194491c49951a86dfea58f99, type: 3}
       propertyPath: m_Name
